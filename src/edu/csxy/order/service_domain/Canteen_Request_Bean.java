@@ -2,7 +2,7 @@ package edu.csxy.order.service_domain;
 
 import java.util.Date;
 
-public class CanteenRequest_Bean {
+public class Canteen_Request_Bean {
 	private int  CR_id;
 	private int C_check;
 	private int C_sign_check;
