@@ -11,7 +11,7 @@ import edu.csxy.order.Dao.Address_Dao;
 import edu.csxy.order.Dao.Dao;
 import edu.csxy.order.Dao_impl.Address_Dao_impl;
 import edu.csxy.order.Dao_impl.BaseDao;
-import edu.csxy.order.service_domain.Address;
+import edu.csxy.order.service_domain.Address_Bean;
 
 /**
  * Servlet implementation class Team_servlet
@@ -35,7 +35,7 @@ public class test_servlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Address_Dao address_Dao = new Address_Dao_impl();
-		Address result = address_Dao.getAddress("1");
+		Address_Bean result = address_Dao.getAddress("1");
 		response.getWriter().append("Served at: ").append(request.getContextPath()).append("Êý¾Ý¿â²âÊÔ").append(result.getallpath());
 	}
 

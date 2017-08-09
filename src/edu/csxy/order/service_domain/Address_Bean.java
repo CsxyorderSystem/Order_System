@@ -1,6 +1,6 @@
 package edu.csxy.order.service_domain;
 
-public class Address {
+public class Address_Bean {
 	private int A_id ;
 	private String A_province = "";
 	private String A_city = "";
