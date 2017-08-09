@@ -1,5 +1,7 @@
 package edu.csxy.order.service_domain;
 
+import java.util.Date;
+
 public class CanteenRequest_Bean {
 	private int  CR_id;
 	private int C_check;
@@ -13,7 +15,14 @@ public class CanteenRequest_Bean {
 	private String L_id;
 	private int C_gathering_check;
 	private String Perssion_id;
-	private int M_id;
+	private int Manager;
+	private Date C_time;
+	public Date getC_time() {
+		return C_time;
+	}
+	public void setC_time(Date c_time) {
+		C_time = c_time;
+	}
 	public int getCR_id() {
 		return CR_id;
 	}
@@ -86,11 +95,12 @@ public class CanteenRequest_Bean {
 	public void setPerssion_id(String perssion_id) {
 		Perssion_id = perssion_id;
 	}
-	public int getM_id() {
-		return M_id;
+	public int getManager() {
+		return Manager;
 	}
-	public void setM_id(int m_id) {
-		M_id = m_id;
+	public void setManager(int manager) {
+		Manager = manager;
 	}
+
 	
 }

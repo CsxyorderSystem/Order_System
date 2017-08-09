@@ -2,10 +2,11 @@ package edu.csxy.order.service_domain;
 
 public class Address_Bean {
 	private int A_id ;
+	private String A_street= "";
 	private String A_province = "";
 	private String A_city = "";
 	private String A_district = "";
-	private String A_street= "";
+	
 	
 	public int getA_id() {
 		return A_id;
