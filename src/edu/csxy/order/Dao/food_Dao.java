@@ -9,6 +9,8 @@ public interface food_Dao {
 	public List<Food_Bean> getFoodInfo(int F_id);
 	
 	//查询所有菜品
-	public List<Food> getAllFodd
+	public List<Food_Bean> getAllFodd();
+	
+	//新建菜品
 
 }
