@@ -11,6 +11,6 @@ public interface permission_Dao {
 	public void setPermissionInfo (Permission_Bean permission_Bean);
 	
 	//查询许可证信息
-	public List<Permission_Bean>  getPermissionInfo(int C_id);
+	public Permission_Bean getPermissionInfo(int C_id);
 
 }

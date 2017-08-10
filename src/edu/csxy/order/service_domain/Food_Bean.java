@@ -6,7 +6,7 @@ private String F_name;
 private float F_price;
 private String F_image;
 private String F_type;
-private String F_estimate;
+private Float F_estimate;
 private String F_describe;
 private String F_number;
 private String F_discount;
@@ -40,10 +40,11 @@ public String getF_type() {
 public void setF_type(String f_type) {
 	F_type = f_type;
 }
-public String getF_estimate() {
+
+public Float getF_estimate() {
 	return F_estimate;
 }
-public void setF_estimate(String f_estimate) {
+public void setF_estimate(Float f_estimate) {
 	F_estimate = f_estimate;
 }
 public String getF_describe() {

@@ -7,7 +7,8 @@ import edu.csxy.order.service_domain.Norm_Bean;
 public interface Norms_Dao {
 	//查询所有规格
 	public List<Norm_Bean> getAllNorms();
+	
 	//更改菜品规格
-	public void saveNorm(Norm_Bean normBean);
+	public void setNorm(Norm_Bean normBean);
 
 }
