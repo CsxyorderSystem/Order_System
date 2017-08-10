@@ -9,6 +9,6 @@ public interface gathering_Dao {
 	public List<Gathering_Bean> getGatherInfo(int C_id);
 	
 	//写入收款人信息
-	public void setGatheringInfo(Gathering_Bean Gathering_Bean);
+	public void setGatheringInfo(Gathering_Bean gathering_Bean);
 
 }

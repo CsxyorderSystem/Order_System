@@ -8,6 +8,6 @@ public interface team_Dao {
 	//查询企业用户信息
 	public List<Team_Bean> getTeamInfo();
 	
-	public void setTeamInfo(List<String> Team_Bean);
+	public void setTeamInfo(Team_Bean team_Bean);
 
 }
