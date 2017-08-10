@@ -1,7 +1,7 @@
 package edu.csxy.order.Dao;
 
 import java.util.List;
-
+//BaseDao
 public interface Dao<T> {
 	
 	/**
