@@ -8,8 +8,8 @@ public interface food_Dao {
 	//查询菜品所有信息
 	public Food_Bean getFoodInfo(int F_id);
 	
-	//查询所有菜品
-	public List<Food_Bean> getAllFodd();
+	//查询所选店铺里所有菜品
+	public List<Food_Bean> getAllFood(int C_id);
 	
 	//新建菜品
 	public void setFood(Food_Bean food_Bean);

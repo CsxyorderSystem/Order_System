@@ -9,5 +9,5 @@ public interface personal_Dao {
 	public Person_Bean getPersonInfo(int P_id);
 
 	//更新个人信息
-	public void setPersonInfo(Person_Bean Person_Bean);
+	public void setPersonInfo(Person_Bean person_Bean);
 }

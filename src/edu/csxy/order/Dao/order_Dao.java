@@ -14,6 +14,21 @@ public interface order_Dao {
 	//查询订单信息
 	public Order_Bean getOrderInfo(int O_id);
 	
-	//查询所有订单信息
-	public List<Order_Bean> getAllOrderInfo();
+	//查询所有餐厅订单信息
+	public List<Order_Bean> getCanteenAllOrderInfo(int C_id);
+	
+	//查询所有个人订单信息
+	public List<Order_Bean> getPersonAllOrderInfo(int P_id);
+	
+	//查询所有单位订单信息
+	public List<Order_Bean> getTeamAllOrderInfo(int T_id);
+	
+	//查询所有餐厅订单信息
+	public List<Order_Bean> getCanteenAllOrderInfo(int C_id,String state);
+	
+	//查询所有个人订单信息
+	public List<Order_Bean> getPersonAllOrderInfo(int P_id,String state);
+	
+	//查询所有单位订单信息
+	public List<Order_Bean> getTeamAllOrderInfo(int T_id,String state);
 }
