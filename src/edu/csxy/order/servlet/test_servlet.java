@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.csxy.order.Dao.Address_Dao;
+import edu.csxy.order.Dao.address_Dao;
 import edu.csxy.order.Dao.Dao;
 import edu.csxy.order.Dao_impl.Address_Dao_impl;
 import edu.csxy.order.Dao_impl.BaseDao;
@@ -34,7 +34,7 @@ public class test_servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		Address_Dao address_Dao = new Address_Dao_impl();
+		address_Dao address_Dao = new Address_Dao_impl();
 		Address_Bean result = address_Dao.getAddress("1");
 		response.getWriter().append("Served at: ").append(request.getContextPath()).append("Êý¾Ý¿â²âÊÔ").append(result.getallpath());
 	}

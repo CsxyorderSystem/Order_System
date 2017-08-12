@@ -23,12 +23,18 @@ public interface order_Dao {
 	//查询所有单位订单信息
 	public List<Order_Bean> getTeamAllOrderInfo(int T_id);
 	
-	//查询所有餐厅订单信息
+	//查询订餐计划内所包含的订单
+	public List<Order_Bean> getSetMealAllOrderInfo(int S_id);
+	
+	//根据状态查询所有餐厅订单信息
 	public List<Order_Bean> getCanteenAllOrderInfo(int C_id,String state);
 	
-	//查询所有个人订单信息
+	//根据状态查询所有个人订单信息
 	public List<Order_Bean> getPersonAllOrderInfo(int P_id,String state);
 	
-	//查询所有单位订单信息
+	//根据状态查询所有单位订单信息
 	public List<Order_Bean> getTeamAllOrderInfo(int T_id,String state);
+	
+	//根据状态查询计划所包含的订单
+	public List<Order_Bean> getSetMealAllOrderInfo(int S_id,String state);
 }

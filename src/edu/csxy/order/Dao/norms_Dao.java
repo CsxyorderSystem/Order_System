@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.csxy.order.service_domain.Norm_Bean;
 
-public interface Norms_Dao {
+public interface norms_Dao {
 	//查询所有规格
 	public List<Norm_Bean> getAllNorms(int C_id);
 	

@@ -8,7 +8,7 @@ public class Canteen_Request_Bean {
 	private int C_sign_check;
 	private int L_checck;
 	private int C_garherting_id;
-	private String Permission_check;
+	private int Permission_check;
 	private int C_id;
 	private int B_id;
 	private int C_sign_id;
@@ -53,10 +53,11 @@ public class Canteen_Request_Bean {
 	public void setC_garherting_id(int c_garherting_id) {
 		C_garherting_id = c_garherting_id;
 	}
-	public String getPermission_check() {
+
+	public int getPermission_check() {
 		return Permission_check;
 	}
-	public void setPermission_check(String permission_check) {
+	public void setPermission_check(int permission_check) {
 		Permission_check = permission_check;
 	}
 	public int getC_id() {
