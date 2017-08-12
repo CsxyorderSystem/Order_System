@@ -1,12 +1,12 @@
 package edu.csxy.order.service;
 
 import edu.csxy.order.Dao.C_Request_Dao;
-import edu.csxy.order.Dao.Norms_Dao;
 import edu.csxy.order.Dao.business_Dao;
 import edu.csxy.order.Dao.canteen_Dao;
 import edu.csxy.order.Dao.food_Dao;
 import edu.csxy.order.Dao.gathering_Dao;
 import edu.csxy.order.Dao.lincense_Dao;
+import edu.csxy.order.Dao.norms_Dao;
 import edu.csxy.order.Dao.order_Dao;
 import edu.csxy.order.Dao.permission_Dao;
 import edu.csxy.order.Dao.sign_Dao;
@@ -31,7 +31,7 @@ public class Canteen_service {
 		permission_Dao permission=new permission_Dao_impl();
 		sign_Dao sign=new sign_Dao_impl();
 		gathering_Dao gathering=new gathering_Dao_impl();
-		Norms_Dao norms=new Norms_Dao_impl();
+		norms_Dao norms=new Norms_Dao_impl();
 		//set_meal_Dao set_meal = new setmeal_Dao_impl();
 		
 }

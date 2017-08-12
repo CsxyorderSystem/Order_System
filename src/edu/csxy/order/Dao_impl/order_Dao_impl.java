@@ -61,4 +61,16 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 		return null;
 	}
 
+	@Override
+	public List<Order_Bean> getSetMealAllOrderInfo(int S_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Order_Bean> getSetMealAllOrderInfo(int S_id, String state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

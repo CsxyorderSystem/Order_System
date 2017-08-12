@@ -5,11 +5,11 @@ private int S_id;
 private	Float S_price;
 private String S_describe;
 private String S_uptime;
-private String S_estimate;
-private String S_number;
-private String S_type;
-private String S_state;
-private String S_date;
+private int S_numCer;
+private int S_type;
+private int S_state;
+private String S_starttime;
+private String S_endtime;
 public int getS_id() {
 	return S_id;
 }
@@ -34,34 +34,36 @@ public String getS_uptime() {
 public void setS_uptime(String s_uptime) {
 	S_uptime = s_uptime;
 }
-public String getS_estimate() {
-	return S_estimate;
+
+public int getS_numCer() {
+	return S_numCer;
 }
-public void setS_estimate(String s_estimate) {
-	S_estimate = s_estimate;
+public void setS_numCer(int s_numCer) {
+	S_numCer = s_numCer;
 }
-public String getS_number() {
-	return S_number;
-}
-public void setS_number(String s_number) {
-	S_number = s_number;
-}
-public String getS_type() {
+public int getS_type() {
 	return S_type;
 }
-public void setS_type(String s_type) {
+public void setS_type(int s_type) {
 	S_type = s_type;
 }
-public String getS_state() {
+public int getS_state() {
 	return S_state;
 }
-public void setS_state(String s_state) {
+public void setS_state(int s_state) {
 	S_state = s_state;
 }
-public String getS_date() {
-	return S_date;
+public String getS_starttime() {
+	return S_starttime;
 }
-public void setS_date(String s_date) {
-	S_date = s_date;
+public void setS_starttime(String s_starttime) {
+	S_starttime = s_starttime;
 }
+public String getS_endtime() {
+	return S_endtime;
+}
+public void setS_endtime(String s_endtime) {
+	S_endtime = s_endtime;
+}
+
 }
