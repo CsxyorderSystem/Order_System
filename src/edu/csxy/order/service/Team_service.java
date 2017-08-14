@@ -33,11 +33,13 @@ import edu.csxy.order.Dao_impl.team_Dao_impl;
 import edu.csxy.order.app_domain.Canteen;
 import edu.csxy.order.app_domain.Food;
 import edu.csxy.order.app_domain.Order;
+import edu.csxy.order.app_domain.Set_meal;
 import edu.csxy.order.app_domain.ShoppingCar;
 import edu.csxy.order.service_domain.Canteen_Bean;
 import edu.csxy.order.service_domain.Gathering_Bean;
 import edu.csxy.order.service_domain.Lincense_Bean;
 import edu.csxy.order.service_domain.Order_Bean;
+import edu.csxy.order.service_domain.Set_meal_Bean;
 import edu.csxy.order.service_domain.Sign_Bean;
 import edu.csxy.order.service_domain.Team_Bean;
 
@@ -117,4 +119,34 @@ public class Team_service {
 		return null;
 		//查看收款人信息
 	}
+	public boolean CreateSetMeal( Set_meal_Bean set_meal_Bean){
+		return false;
+		//创建用餐计划
+	}
+
+	public boolean ChangeSetMeal(Set_meal_Bean set_meal_Bean){
+		return false;
+		//修改用餐计划
+	}
+	
+	public Set_meal checkSet_meal(int S_id){
+		return null;
+		//查看用餐计划信息
+	}
+	
+	public List<Set_meal>getAllSet_Meal(int T_id){
+		return null;
+		//查询用餐计划
+	}
+	
+	public List<Set_meal>getAllSet_Meal(int T_id,String state){
+		return null;
+		//根据状态查询用餐计划
+	}
+	
+	public List<Set_meal>getAllSet_Meal(int T_id,String startTime,String endTime){
+		return null;
+		//根据时间查询用餐计划
+	}
+	
 }

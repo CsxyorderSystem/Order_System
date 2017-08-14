@@ -30,6 +30,7 @@ import edu.csxy.order.Dao_impl.set_meal_Dao_impl;
 import edu.csxy.order.Dao_impl.sign_Dao_impl;
 import edu.csxy.order.app_domain.Food;
 import edu.csxy.order.app_domain.Order;
+import edu.csxy.order.app_domain.Set_meal;
 import edu.csxy.order.service_domain.Canteen_Bean;
 import edu.csxy.order.service_domain.Canteen_Request_Bean;
 import edu.csxy.order.service_domain.FoodType_Bean;
@@ -54,6 +55,7 @@ public class Canteen_service {
 		set_meal_Dao set_meal = new set_meal_Dao_impl();
 		promotion_Dao promotion=new promotion_Dao_impl();
 		foodtype_Dao foodtype=new foodtype_Dao_impl();
+		
 		public Boolean QuailityRequest(Canteen_Request_Bean canteen_Request_Bean){
 			return null;
 			//申请入驻
@@ -66,7 +68,7 @@ public class Canteen_service {
 			return null;//根据状态查询自己接的单
 		}
 		
-		public Boolean ComfirmOrder(int O_id,String O_statr){
+		public Boolean ComfirmOrder(int O_id,String O_state){
 			return null;
 			//确认订单
 		}
@@ -117,23 +119,49 @@ public class Canteen_service {
 			return null;
 			//修改规格
 		}
-		public Food_Bean ChangeFood(){
-			return null;
+		public boolean ChangeFood(Food_Bean food_Bean){
+			return false;
 			//修改菜品
 		}
-		public FoodType_Bean ChangeFoodType(){
-			return null;
+		public boolean  ChangeFoodType(FoodType_Bean food_type_Bean){
+			return false;
 			//修改菜品类别
 		}
-		public Set_meal_Bean CreateSetMeal(){
-			return null;
+		public boolean CreateSetMeal( Set_meal_Bean set_meal_Bean){
+			return false;
 			//创建用餐计划
 		}
-		public void DeleteSetMeal(int S_id,int C_id){
+		public boolean DeleteSetMeal(int S_id,int C_id){
+			return false;
 			//删除用餐计划
 		}
-		public Set_meal_Bean ChangeSetMeal(){
-			return null;
+		public boolean ChangeSetMeal(Set_meal_Bean set_meal_Bean){
+			return false;
 			//修改用餐计划
+		}
+		
+		public Set_meal checkSet_meal(int S_id){
+			return null;
+			//查看用餐计划信息
+		}
+		
+		public List<Set_meal>getAllSet_Meal(int C_id){
+			return null;
+			//查询用餐计划
+		}
+		
+		public List<Set_meal>getAllSet_Meal(int C_id,String state){
+			return null;
+			//根据状态查询用餐计划
+		}
+		
+		public List<Set_meal>getAllSet_Meal(int C_id,String startTime,String endTime){
+			return null;
+			//根据时间查询用餐计划
+		}
+		
+		public Boolean ComfirmSetMeal(int O_id,String O_statr){
+			return null;
+			//确认用餐计划
 		}
 }
