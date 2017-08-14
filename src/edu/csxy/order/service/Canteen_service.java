@@ -1,5 +1,7 @@
 package edu.csxy.order.service;
 
+import java.util.List;
+
 import edu.csxy.order.Dao.C_Request_Dao;
 import edu.csxy.order.Dao.business_Dao;
 import edu.csxy.order.Dao.canteen_Dao;
@@ -26,11 +28,17 @@ import edu.csxy.order.Dao_impl.permission_Dao_impl;
 import edu.csxy.order.Dao_impl.promotion_Dao_impl;
 import edu.csxy.order.Dao_impl.set_meal_Dao_impl;
 import edu.csxy.order.Dao_impl.sign_Dao_impl;
+import edu.csxy.order.app_domain.Food;
+import edu.csxy.order.app_domain.Order;
+import edu.csxy.order.service_domain.Canteen_Bean;
 import edu.csxy.order.service_domain.Canteen_Request_Bean;
 import edu.csxy.order.service_domain.FoodType_Bean;
 import edu.csxy.order.service_domain.Food_Bean;
+import edu.csxy.order.service_domain.Gathering_Bean;
+import edu.csxy.order.service_domain.Lincense_Bean;
 import edu.csxy.order.service_domain.Norm_Bean;
 import edu.csxy.order.service_domain.Set_meal_Bean;
+import edu.csxy.order.service_domain.Sign_Bean;
 
 public class Canteen_service {
 		canteen_Dao canteen=new canteen_Dao_impl();
@@ -46,38 +54,44 @@ public class Canteen_service {
 		set_meal_Dao set_meal = new set_meal_Dao_impl();
 		promotion_Dao promotion=new promotion_Dao_impl();
 		foodtype_Dao foodtype=new foodtype_Dao_impl();
-		public Canteen_Request_Bean QuailityRequest(){
+		public Boolean QuailityRequest(Canteen_Request_Bean canteen_Request_Bean){
 			return null;
 			//申请入驻
 		}
-		public void QueryAllOrder(){
-			//查询所有订单
+		public List<Order> QueryOrder(int C_id){
+			return null;//查询自己接的单
 		}
-		public void QueryOrder(int C_id){
-			//查询自己接的单
+		
+		public List<Order> QueryOrder(int C_id,String state){
+			return null;//根据状态查询自己接的单
 		}
-		public void ComfirmOrder(int O_id,String O_statr){
-			//查询确认的订单
+		
+		public Boolean ComfirmOrder(int O_id,String O_statr){
+			return null;
+			//确认订单
 		}
-		public void OpenAndClose(int C_open){
+		public Boolean OpenAndClose(int C_open){
+			return null;
 			//开店关店
 		}
-		public void CheckFood(int C_id){
+		public List<Food> CheckFood(int C_id){
+			return null;
 			//查看菜品
 		}
-		public void CheckCanreenInfo(int C_id,int L_id){
+		public Canteen_Bean CheckCanreenInfo(int C_id,int L_id){
+			return null;
 			//查看餐厅信息
 		}
-		public void CheckManagementInfo(int C_id,int L_id){
-			//查看经营信息
-		}
-		public void CheckLinsenceInfo(int C_id,int L_id){
+		public Lincense_Bean CheckLinsenceInfo(int C_id,int L_id){
+			return null;
 			//查看执照信息
 		}
-		public void CheckSignPersonalInfo(int C_id,int C_sign_id){
+		public Sign_Bean CheckSignPersonalInfo(int C_id,int C_sign_id){
+			return null;
 			//查看注册人信息
 		}
-		public void CheckPayPersonInfo(int C_id,int C_gathering_card){
+		public Gathering_Bean CheckGatheringInfo(int C_id,int C_gathering_card){
+			return null;
 			//查看收款人信息
 		}
 		public void Mypromotion(){
@@ -91,10 +105,12 @@ public class Canteen_service {
 			return null;
 			//创建菜品
 		}
-		public void DeleteFoodType(int FT_name,int C_id){
+		public Boolean DeleteFoodType(int FT_name,int C_id){
+			return null;
 			//删除菜品类别
 		}
-		public void DeleteFood(int F_name,int C_id){
+		public Boolean DeleteFood(int F_name,int C_id){
+			return null;
 			//删除菜品
 		}
 		public Norm_Bean ChangeNorms(){
