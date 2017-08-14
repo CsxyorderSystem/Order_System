@@ -56,8 +56,8 @@ public class Canteen_service {
 		promotion_Dao promotion=new promotion_Dao_impl();
 		foodtype_Dao foodtype=new foodtype_Dao_impl();
 		
-		public Boolean QuailityRequest(Canteen_Request_Bean canteen_Request_Bean){
-			return null;
+		public boolean QuailityRequest(Canteen_Request_Bean canteen_Request_Bean){
+			return false;
 			//申请入驻
 		}
 		public List<Order> QueryOrder(int C_id){
@@ -68,12 +68,12 @@ public class Canteen_service {
 			return null;//根据状态查询自己接的单
 		}
 		
-		public Boolean ComfirmOrder(int O_id,String O_state){
-			return null;
+		public boolean ComfirmOrder(int O_id,String O_state){
+			return false;
 			//确认订单
 		}
-		public Boolean OpenAndClose(int C_open){
-			return null;
+		public boolean OpenAndClose(int C_open){
+			return false;
 			//开店关店
 		}
 		public List<Food> CheckFood(int C_id){
@@ -107,12 +107,12 @@ public class Canteen_service {
 			return null;
 			//创建菜品
 		}
-		public Boolean DeleteFoodType(int FT_name,int C_id){
-			return null;
+		public boolean DeleteFoodType(int FT_name,int C_id){
+			return false;
 			//删除菜品类别
 		}
-		public Boolean DeleteFood(int F_name,int C_id){
-			return null;
+		public boolean DeleteFood(int F_name,int C_id){
+			return false;
 			//删除菜品
 		}
 		public Norm_Bean ChangeNorms(){
@@ -150,18 +150,18 @@ public class Canteen_service {
 			//查询用餐计划
 		}
 		
-		public List<Set_meal>getAllSet_Meal(int C_id,String state){
+		public List<Set_meal>getSet_Meal(int C_id,String state){
 			return null;
 			//根据状态查询用餐计划
 		}
 		
-		public List<Set_meal>getAllSet_Meal(int C_id,String startTime,String endTime){
+		public List<Set_meal>getSet_Meal(int C_id,String startTime,String endTime){
 			return null;
 			//根据时间查询用餐计划
 		}
 		
-		public Boolean ComfirmSetMeal(int O_id,String O_statr){
-			return null;
+		public boolean ComfirmSetMeal(int S_id,String S_state){
+			return false;
 			//确认用餐计划
 		}
 }

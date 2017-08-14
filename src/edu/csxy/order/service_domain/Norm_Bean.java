@@ -5,6 +5,7 @@ public class Norm_Bean {
 	private String N_name;
 	private String N_type;
 	private String N_price;
+	private boolean N_state = false;
 	public int getN_id() {
 		return N_id;
 	}
@@ -29,11 +30,8 @@ public class Norm_Bean {
 	public void setN_price(String n_price) {
 		N_price = n_price;
 	}
-	public String getN_state() {
-		return N_state;
+
+	public void check(){
+		this.N_state=!this.N_state;
 	}
-	public void setN_state(String n_state) {
-		N_state = n_state;
-	}
-	private String N_state;
 }

@@ -19,8 +19,8 @@ public class Manager_service {
 		return null;
 		//根据状态查询商家入驻请求
 	}
-	public Boolean ChangeRequest(int CR_id,int C_check){
-		return null;
+	public boolean ChangeRequest(int CR_id,int C_check){
+		return false;
 		//更改商家入驻申请
 	}
 	public void CheckPromotionRequest(int PR_id){

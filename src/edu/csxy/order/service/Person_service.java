@@ -136,12 +136,12 @@ public class Person_service {
 		//查询用餐计划
 	}
 	
-	public List<Set_meal>getAllSet_Meal(int P_id,String state){
+	public List<Set_meal>getSet_Meal(int P_id,String state){
 		return null;
 		//根据状态查询用餐计划
 	}
 	
-	public List<Set_meal>getAllSet_Meal(int P_id,String startTime,String endTime){
+	public List<Set_meal>getSet_Meal(int P_id,String startTime,String endTime){
 		return null;
 		//根据时间查询用餐计划
 	}

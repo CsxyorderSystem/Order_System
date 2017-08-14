@@ -83,20 +83,20 @@ public class Team_service {
 		//查看订单信息
 	}
 	
-	public Boolean CreateOrder(ShoppingCar shoppingCar){
-		return null;
+	public boolean CreateOrder(ShoppingCar shoppingCar){
+		return false;
 		//创建订单
 	} 
-	public Boolean PayOrder(){
-		return null;
+	public boolean PayOrder(){
+		return false;
 		//支付订单
 	}
-	public Boolean ManagerInfo(Team_Bean team_Bean){
-		return null;
+	public boolean ManagerInfo(Team_Bean team_Bean){
+		return false;
 		//管理单位信息
 	}
-	public Boolean EstimateOrder(int T_id,int O_id,int C_id,String Estlimate){
-		return null;
+	public boolean EstimateOrder(int T_id,int O_id,int C_id,String Estlimate){
+		return false;
 		//评价订单
 	}
 	public List<Food> CheckFood(int C_id){
@@ -139,12 +139,12 @@ public class Team_service {
 		//查询用餐计划
 	}
 	
-	public List<Set_meal>getAllSet_Meal(int T_id,String state){
+	public List<Set_meal>getSet_Meal(int T_id,String state){
 		return null;
 		//根据状态查询用餐计划
 	}
 	
-	public List<Set_meal>getAllSet_Meal(int T_id,String startTime,String endTime){
+	public List<Set_meal>getSet_Meal(int T_id,String startTime,String endTime){
 		return null;
 		//根据时间查询用餐计划
 	}
