@@ -12,9 +12,11 @@ public class gathering_Dao_impl extends BaseDao<Gathering_Bean> implements gathe
 	}
 
 	@Override
-	public void setGatheringInfo(Gathering_Bean gathering_Bean) {
+	public boolean setGatheringInfo(Gathering_Bean gathering_Bean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
+
+	
 
 }

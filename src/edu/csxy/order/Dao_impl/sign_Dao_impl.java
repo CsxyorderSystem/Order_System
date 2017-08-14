@@ -6,9 +6,9 @@ import edu.csxy.order.service_domain.Sign_Bean;
 public class sign_Dao_impl extends BaseDao<Sign_Bean> implements sign_Dao {
 
 	@Override
-	public void setSignInfo(Sign_Bean sign_Bean) {
+	public boolean setSignInfo(Sign_Bean sign_Bean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 	@Override
@@ -16,5 +16,6 @@ public class sign_Dao_impl extends BaseDao<Sign_Bean> implements sign_Dao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

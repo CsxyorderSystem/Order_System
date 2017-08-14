@@ -6,9 +6,10 @@ import edu.csxy.order.service_domain.Manager_Bean;
 public class manager_Dao_impl extends BaseDao<Manager_Bean> implements manager_Dao {
 
 	@Override
-	public void addUser(Manager_Bean manager_Bean) {
+	public boolean addUser(Manager_Bean manager_Bean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
+
 
 }

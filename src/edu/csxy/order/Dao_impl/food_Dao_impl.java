@@ -20,27 +20,28 @@ public class food_Dao_impl extends BaseDao<Food_Bean> implements food_Dao {
 	}
 
 	@Override
-	public void setFood(Food_Bean food_Bean) {
+	public boolean setFood(Food_Bean food_Bean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 	@Override
-	public void ChangeFood(Food_Bean food_Bean) {
+	public boolean ChangeFood(Food_Bean food_Bean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 	@Override
-	public void deleteFood(int F_id) {
+	public boolean deleteFood(int F_id) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 	@Override
-	public void ChangeEstimate(int F_id, Float estimate) {
+	public boolean ChangeEstimate(int F_id, Float estimate) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
+	
 }

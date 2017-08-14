@@ -6,10 +6,12 @@ import edu.csxy.order.service_domain.Business_Bean;
 
 public interface business_Dao {
 	//写入商家信息
-	public void setBusinessInfo(Business_Bean Business_Bean);
+	public List<Business_Bean> setBusinessInfo(Business_Bean Business_Bean);
 
 	//查询商家用户信息
-	public Business_Bean getBusinessInfo(int B_id);
-	
+	public List<Business_Bean> getBusinessInfo(int B_id);
+	//获取商家登录信息
+	public List<Business_Bean> getBusiness(int U_id);
+
 	
 }

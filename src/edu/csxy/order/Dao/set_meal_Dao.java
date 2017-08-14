@@ -27,8 +27,8 @@ public interface set_meal_Dao {
 	public  List<Set_meal_Bean> getTeamSet_meal(int T_id,int S_state);
 	
 	//新建用餐计划
-	public void setSet_meal(Set_meal_Bean set_meal_Bean); 
+	public boolean setSet_meal(Set_meal_Bean set_meal_Bean); 
 	
 	//修改价格
-	public void changeSet_meal_price(int S_id,float S_price);
+	public boolean changeSet_meal_price(int S_id,float S_price);
 }

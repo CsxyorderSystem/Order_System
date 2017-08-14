@@ -12,16 +12,16 @@ public interface food_Dao {
 	public List<Food_Bean> getAllFood(int C_id);
 	
 	//新建菜品
-	public void setFood(Food_Bean food_Bean);
+	public boolean setFood(Food_Bean food_Bean);
 	
 	//修改菜品信息
-	public void ChangeFood(Food_Bean food_Bean);
+	public boolean ChangeFood(Food_Bean food_Bean);
 	
 	//删除菜品
-	public void deleteFood(int F_id);
+	public boolean deleteFood(int F_id);
 	
 	//修改菜品评分
-	public void ChangeEstimate(int F_id,Float estimate);
+	public boolean ChangeEstimate(int F_id,Float estimate);
 	
 	//
 	
