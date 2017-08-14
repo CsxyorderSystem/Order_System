@@ -15,9 +15,10 @@ public class Norms_Dao_impl extends BaseDao<Norm_Bean> implements norms_Dao {
 	}
 
 	@Override
-	public void setNorm(Norm_Bean normBean) {
+	public boolean setNorm(Norm_Bean normBean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
+	
 }

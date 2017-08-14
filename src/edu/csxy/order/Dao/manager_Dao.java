@@ -7,7 +7,7 @@ import edu.csxy.order.service_domain.Manager_Bean;
 
 public interface manager_Dao {
 	//添加运营用户
-	public void addUser(Manager_Bean manager_Bean);
+	public boolean addUser(Manager_Bean manager_Bean);
 	
 
 }

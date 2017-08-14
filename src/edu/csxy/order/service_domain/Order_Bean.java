@@ -8,9 +8,15 @@ public class Order_Bean {
 	private String O_estimate;
 	private String O_state;
 	private String O_usetime;
-	
+	private String O_reason;
 	
 
+	public String getO_reason() {
+		return O_reason;
+	}
+	public void setO_reason(String o_reason) {
+		O_reason = o_reason;
+	}
 	public int getO_id() {
 		return O_id;
 	}

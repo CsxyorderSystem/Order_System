@@ -14,9 +14,9 @@ public class C_Request_impl extends BaseDao<Canteen_Request_Bean> implements C_R
 	}
 
 	@Override
-	public void setRequest(Canteen_Request_Bean canteen_Rquest_Bean) {
+	public boolean setRequest(Canteen_Request_Bean canteen_Rquest_Bean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 	@Override
@@ -31,4 +31,5 @@ public class C_Request_impl extends BaseDao<Canteen_Request_Bean> implements C_R
 		
 	}
 
+	
 }

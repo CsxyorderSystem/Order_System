@@ -7,7 +7,7 @@ import edu.csxy.order.service_domain.Set_meal_Bean;
 
 public class set_meal_Dao_impl extends BaseDao<Set_meal_Bean> implements set_meal_Dao{
 
-	
+	@Override
 	public List<Set_meal_Bean> getCanteenSet_meal(int C_id) {
 		// TODO Auto-generated method stub
 		return null;
@@ -44,16 +44,17 @@ public class set_meal_Dao_impl extends BaseDao<Set_meal_Bean> implements set_mea
 	}
 
 	@Override
-	public void setSet_meal(Set_meal_Bean set_meal_Bean) {
+	public boolean setSet_meal(Set_meal_Bean set_meal_Bean) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
 	@Override
-	public void changeSet_meal_price(int S_id, float S_price) {
+	public boolean changeSet_meal_price(int S_id, float S_price) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
-
+	
+	
 }

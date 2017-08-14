@@ -9,6 +9,6 @@ public interface norms_Dao {
 	public List<Norm_Bean> getAllNorms(int C_id);
 	
 	//更改菜品规格
-	public void setNorm(Norm_Bean normBean);
+	public boolean setNorm(Norm_Bean normBean);
 
 }
