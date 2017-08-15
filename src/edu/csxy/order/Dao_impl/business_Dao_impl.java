@@ -11,6 +11,8 @@ public class business_Dao_impl extends BaseDao<Business_Bean> implements busines
 	public Boolean setBusinessInfo(Business_Bean Business_Bean) {
 
 		// TODO Auto-generated method stub
+		String sql="insert into ";
+		
 		return null;
 	}
 
