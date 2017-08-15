@@ -1,5 +1,8 @@
 package edu.csxy.order.service;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
 import edu.csxy.order.Dao.business_Dao;
 import edu.csxy.order.Dao.personal_Dao;
 import edu.csxy.order.Dao.team_Dao;
@@ -12,6 +15,7 @@ import edu.csxy.order.service_domain.Business_Bean;
 import edu.csxy.order.service_domain.Person_Bean;
 import edu.csxy.order.service_domain.Team_Bean;
 import edu.csxy.order.service_domain.User_Bean;
+import edu.csxy.order.utils.Encoder;
 import edu.csxy.order.utils.idFactory;
 
 public class User_service {
@@ -31,13 +35,23 @@ public class User_service {
 
 	public boolean Sign(User_Bean userBean,String type){
 		boolean falg = false;
-		if(userBean.getU_password().equals("")){
-			userBean.setU_id(idFactory.createUserId());
-			falg = User_Dao.sign(userBean.getU_phone(),userBean.getU_password(),userBean.getU_id());
-		}else{
-			userBean.setU_id(User_Dao.alreadysign(userBean.getU_phone()));
+		
+		
+		try {//用户密码加密
+			Encoder.EncoderByMd5(userBean.getU_password());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		if(type.equals(type_person)){
+		
+		
+		if(userBean.getU_password().equals("")){//验证用户是否存在
+			userBean.setU_id(idFactory.createUserId());
+			falg = User_Dao.sign(userBean.getU_phone(),userBean.getU_password(),userBean.getU_id()); //用户不存在则添加用户
+		}else{
+			userBean.setU_id(User_Dao.alreadysign(userBean.getU_phone()));//用户存在返回用户号
+		}
+		if(type.equals(type_person)){//根据请求类型创建相应的具体用户类型
 			Person_Bean person_Bean = new Person_Bean();
 			person_Bean.setP_id(idFactory.createPersonId());
 			falg = Personal_Dao.setPersonInfo(person_Bean);
