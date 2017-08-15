@@ -9,6 +9,7 @@ public class business_Dao_impl extends BaseDao<Business_Bean> implements busines
 
 	@Override
 	public List<Business_Bean> setBusinessInfo(Business_Bean Business_Bean) {
+		//
 		return null ;
 		// TODO Auto-generated method stub
 		
