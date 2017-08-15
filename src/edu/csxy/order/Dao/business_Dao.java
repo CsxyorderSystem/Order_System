@@ -1,17 +1,15 @@
 package edu.csxy.order.Dao;
 
-import java.util.List;
-
 import edu.csxy.order.service_domain.Business_Bean;
 
 public interface business_Dao {
 	//写入商家信息
-	public List<Business_Bean> setBusinessInfo(Business_Bean Business_Bean);
+	public Boolean setBusinessInfo(Business_Bean Business_Bean);
 
 	//查询商家用户信息
-	public List<Business_Bean> getBusinessInfo(int B_id);
+	public Business_Bean getBusinessInfo(String B_id);
 	//获取商家登录信息
-	public List<Business_Bean> getBusiness(int U_id);
+	public Business_Bean getBusiness(String U_id);
 
 	
 }

@@ -12,10 +12,10 @@ public class permission_Dao_impl extends BaseDao<Permission_Bean> implements per
 	}
 
 	@Override
-	public Permission_Bean getPermissionInfo(int C_id) {
+	public Permission_Bean getPermissionInfo(String C_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
+
 }

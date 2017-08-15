@@ -14,7 +14,7 @@ public class food_Dao_impl extends BaseDao<Food_Bean> implements food_Dao {
 	}
 
 	@Override
-	public List<Food_Bean> getAllFood(int C_id) {
+	public List<Food_Bean> getAllFood(String C_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -32,16 +32,17 @@ public class food_Dao_impl extends BaseDao<Food_Bean> implements food_Dao {
 	}
 
 	@Override
-	public boolean deleteFood(int F_id) {
+	public boolean deleteFood(String F_id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean ChangeEstimate(int F_id, Float estimate) {
+	public boolean ChangeEstimate(String F_id, Float estimate) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 	
 }

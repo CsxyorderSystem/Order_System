@@ -12,10 +12,11 @@ public class sign_Dao_impl extends BaseDao<Sign_Bean> implements sign_Dao {
 	}
 
 	@Override
-	public Sign_Bean getSignInfo(int C_id) {
+	public Sign_Bean getSignInfo(String C_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 
 }

@@ -12,11 +12,10 @@ public class lincense_Dao_impl extends BaseDao<Lincense_Bean> implements lincens
 	}
 
 	@Override
-	public Lincense_Bean getLincenseInfo(int C_id) {
+	public Lincense_Bean getLincenseInfo(String C_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 
 }

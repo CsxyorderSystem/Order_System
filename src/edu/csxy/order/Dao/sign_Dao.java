@@ -7,6 +7,6 @@ public interface sign_Dao {
 	public boolean setSignInfo(Sign_Bean sign_Bean);
 	
 	//查询签约人信息
-	public Sign_Bean getSignInfo(int C_id);
+	public Sign_Bean getSignInfo(String C_id);
 
 }

@@ -6,7 +6,7 @@ import edu.csxy.order.service_domain.Gathering_Bean;
 public class gathering_Dao_impl extends BaseDao<Gathering_Bean> implements gathering_Dao {
 
 	@Override
-	public Gathering_Bean getGatherInfo(int C_id) {
+	public Gathering_Bean getGatherInfo(String C_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -17,6 +17,5 @@ public class gathering_Dao_impl extends BaseDao<Gathering_Bean> implements gathe
 		return false;
 	}
 
-	
 
 }

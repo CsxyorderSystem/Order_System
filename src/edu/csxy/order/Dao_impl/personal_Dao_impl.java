@@ -8,7 +8,7 @@ import edu.csxy.order.service_domain.Person_Bean;
 public class personal_Dao_impl extends BaseDao<Person_Bean> implements personal_Dao {
 
 	@Override
-	public List<Person_Bean> getPersonInfo(int P_id) {
+	public List<Person_Bean> getPersonInfo(String P_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -20,11 +20,11 @@ public class personal_Dao_impl extends BaseDao<Person_Bean> implements personal_
 	}
 
 	@Override
-	public boolean getPersonalInfo(int U_id) {
+	public boolean getPersonalInfo(String U_id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	
+
 
 }

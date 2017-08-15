@@ -9,7 +9,7 @@ import edu.csxy.order.service_domain.Norm_Bean;
 public class Norms_Dao_impl extends BaseDao<Norm_Bean> implements norms_Dao {
 
 	@Override
-	public List<Norm_Bean> getAllNorms(int C_id) {
+	public List<Norm_Bean> getAllNorms(String C_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -19,6 +19,7 @@ public class Norms_Dao_impl extends BaseDao<Norm_Bean> implements norms_Dao {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 	
 }
