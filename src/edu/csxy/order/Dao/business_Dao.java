@@ -7,9 +7,9 @@ public interface business_Dao {
 	public Boolean setBusinessInfo(Business_Bean Business_Bean);
 
 	//查询商家用户信息
-	public Business_Bean getBusinessInfo(int B_id);
+	public Business_Bean getBusinessInfo(String B_id);
 	//获取商家登录信息
-	public Business_Bean getBusiness(int U_id);
+	public Business_Bean getBusiness(String U_id);
 
 	
 }

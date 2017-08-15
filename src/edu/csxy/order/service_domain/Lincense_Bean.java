@@ -1,7 +1,7 @@
 package edu.csxy.order.service_domain;
 
 public class Lincense_Bean {
-	private int C_lincense_id;
+	private String C_lincense_id;
 	private String C_lincense_name;
 	private String C_lincense_address;
 	private String C_lincense_date;
@@ -10,10 +10,11 @@ public class Lincense_Bean {
 	private String C_legal_name;
 	private String C_legal_id;
 	private String C_legal_imgae;
-	public int getC_lincense_id() {
+
+	public String getC_lincense_id() {
 		return C_lincense_id;
 	}
-	public void setC_lincense_id(int c_lincense_id) {
+	public void setC_lincense_id(String c_lincense_id) {
 		C_lincense_id = c_lincense_id;
 	}
 	public String getC_lincense_name() {

@@ -1,14 +1,15 @@
 package edu.csxy.order.service_domain;
 
 public class Person_Bean {
-	private int P_id;
+	private String P_id;
 	private String P_name;
 	private String P_sex;
 	private String P_flavor;
-	public int getP_id() {
+
+	public String getP_id() {
 		return P_id;
 	}
-	public void setP_id(int p_id) {
+	public void setP_id(String p_id) {
 		P_id = p_id;
 	}
 	public String getP_name() {

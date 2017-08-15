@@ -11,7 +11,7 @@ import edu.csxy.order.app_domain.Canteen_Request;
 public class Manager_service {
 	manager_Dao manager=new manager_Dao_impl();
 	C_Request_Dao c_Request=new C_Request_impl();
-	public List<Canteen_Request> CheakRequest(int CR_id) {
+	public Canteen_Request CheakRequest(int CR_id) {
 		return null;
 		//查询商家入驻请求
 	}

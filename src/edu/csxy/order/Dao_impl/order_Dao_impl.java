@@ -32,19 +32,19 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 	}
 
 	@Override
-	public List<Order_Bean> getCanteenOrderInfo(int C_id) {
+	public List<Order_Bean> getCanteenOrderInfo(String C_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Order_Bean> getPersonOrderInfo(int P_id) {
+	public List<Order_Bean> getPersonOrderInfo(String P_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Order_Bean> getTeamOrderInfo(int T_id) {
+	public List<Order_Bean> getTeamOrderInfo(String T_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -56,19 +56,19 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 	}
 
 	@Override
-	public List<Order_Bean> getCanteenOrderInfo(int C_id, String state) {
+	public List<Order_Bean> getCanteenOrderInfo(String C_id, String state) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Order_Bean> getPersonOrderInfo(int P_id, String state) {
+	public List<Order_Bean> getPersonOrderInfo(String P_id, String state) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Order_Bean> getTeamOrderInfo(int T_id, String state) {
+	public List<Order_Bean> getTeamOrderInfo(String T_id, String state) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -78,7 +78,5 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
 
 }

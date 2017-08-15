@@ -1,13 +1,14 @@
 package edu.csxy.order.service_domain;
 
 public class Team_Bean {
-	private int T_id;
+	private String T_id;
 	private String T_name;
 	private String T_phone;
-	public int getT_id() {
+
+	public String getT_id() {
 		return T_id;
 	}
-	public void setT_id(int t_id) {
+	public void setT_id(String t_id) {
 		T_id = t_id;
 	}
 	public String getT_name() {

@@ -9,7 +9,7 @@ public interface food_Dao {
 	public Food_Bean getFoodInfo(int F_id);
 	
 	//查询所选店铺里所有菜品
-	public List<Food_Bean> getAllFood(int C_id);
+	public List<Food_Bean> getAllFood(String C_id);
 	
 	//新建菜品
 	public boolean setFood(Food_Bean food_Bean);
@@ -18,10 +18,10 @@ public interface food_Dao {
 	public boolean ChangeFood(Food_Bean food_Bean);
 	
 	//删除菜品
-	public boolean deleteFood(int F_id);
+	public boolean deleteFood(String F_id);
 	
 	//修改菜品评分
-	public boolean ChangeEstimate(int F_id,Float estimate);
+	public boolean ChangeEstimate(String F_id,Float estimate);
 	
 	//
 	

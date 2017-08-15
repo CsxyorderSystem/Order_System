@@ -4,7 +4,7 @@ public class Norm_Bean {
 	private int N_id;
 	private String N_name;
 	private String N_type;
-	private String N_price;
+	private float N_price;
 	private boolean N_state = false;
 	public int getN_id() {
 		return N_id;
@@ -24,13 +24,19 @@ public class Norm_Bean {
 	public void setN_type(String n_type) {
 		N_type = n_type;
 	}
-	public String getN_price() {
+
+	public float getN_price() {
 		return N_price;
 	}
-	public void setN_price(String n_price) {
+	public void setN_price(float n_price) {
 		N_price = n_price;
 	}
-
+	public boolean isN_state() {
+		return N_state;
+	}
+	public void setN_state(boolean n_state) {
+		N_state = n_state;
+	}
 	public void check(){
 		this.N_state=!this.N_state;
 	}

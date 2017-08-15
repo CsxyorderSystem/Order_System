@@ -60,11 +60,11 @@ public class Canteen_service {
 			return false;
 			//申请入驻
 		}
-		public List<Order> QueryOrder(int C_id){
+		public List<Order> QueryOrder(String C_id){
 			return null;//查询自己接的单
 		}
 		
-		public List<Order> QueryOrder(int C_id,String state){
+		public List<Order> QueryOrder(String C_id,String state){
 			return null;//根据状态查询自己接的单
 		}
 		
@@ -76,23 +76,23 @@ public class Canteen_service {
 			return false;
 			//开店关店
 		}
-		public List<Food> CheckFood(int C_id){
+		public List<Food> CheckFood(String C_id){
 			return null;
 			//查看菜品
 		}
-		public Canteen_Bean CheckCanreenInfo(int C_id,int L_id){
+		public Canteen_Bean CheckCanreenInfo(String C_id,String L_id){
 			return null;
 			//查看餐厅信息
 		}
-		public Lincense_Bean CheckLinsenceInfo(int C_id,int L_id){
+		public Lincense_Bean CheckLinsenceInfo(String C_id,String L_id){
 			return null;
 			//查看执照信息
 		}
-		public Sign_Bean CheckSignPersonalInfo(int C_id,int C_sign_id){
+		public Sign_Bean CheckSignPersonalInfo(String C_id,String C_sign_id){
 			return null;
 			//查看注册人信息
 		}
-		public Gathering_Bean CheckGatheringInfo(int C_id,int C_gathering_card){
+		public Gathering_Bean CheckGatheringInfo(String C_id,String C_gathering_card){
 			return null;
 			//查看收款人信息
 		}
@@ -107,7 +107,7 @@ public class Canteen_service {
 			return null;
 			//创建菜品
 		}
-		public boolean DeleteFoodType(int FT_name,int C_id){
+		public boolean DeleteFoodType(String FT_name,int C_id){
 			return false;
 			//删除菜品类别
 		}

@@ -9,6 +9,6 @@ public interface lincense_Dao {
 	public boolean setLincenseInfo(Lincense_Bean lincense_bean);
 	
 	//≤È—Ø÷¥’’–≈œ¢
-	public Lincense_Bean getLincenseInfo(int C_id);
+	public Lincense_Bean getLincenseInfo(String C_id);
 
 }

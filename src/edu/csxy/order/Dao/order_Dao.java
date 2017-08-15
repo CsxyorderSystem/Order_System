@@ -17,25 +17,25 @@ public interface order_Dao {
 	public List<Order_Bean> getOrderInfo(int O_id);
 	
 	//查询所有餐厅订单信息
-	public List<Order_Bean> getCanteenOrderInfo(int C_id);
+	public List<Order_Bean> getCanteenOrderInfo(String C_id);
 	
 	//查询所有个人订单信息
-	public List<Order_Bean> getPersonOrderInfo(int P_id);
+	public List<Order_Bean> getPersonOrderInfo(String P_id);
 	
 	//查询所有单位订单信息
-	public List<Order_Bean> getTeamOrderInfo(int T_id);
+	public List<Order_Bean> getTeamOrderInfo(String T_id);
 	
 	//查询订餐计划内所包含的订单
 	public List<Order_Bean> getSetMealOrderInfo(int S_id);
 	
 	//根据状态查询所有餐厅订单信息
-	public List<Order_Bean> getCanteenOrderInfo(int C_id,String state);
+	public List<Order_Bean> getCanteenOrderInfo(String C_id,String state);
 	
 	//根据状态查询所有个人订单信息
-	public List<Order_Bean> getPersonOrderInfo(int P_id,String state);
+	public List<Order_Bean> getPersonOrderInfo(String P_id,String state);
 	
 	//根据状态查询所有单位订单信息
-	public List<Order_Bean> getTeamOrderInfo(int T_id,String state);
+	public List<Order_Bean> getTeamOrderInfo(String T_id,String state);
 	
 	//根据状态查询计划所包含的订单
 	public List<Order_Bean> getSetMealOrderInfo(int S_id,String state);

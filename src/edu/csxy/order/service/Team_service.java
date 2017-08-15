@@ -61,19 +61,19 @@ public class Team_service {
 		return null;
 		//查询所有餐厅
 	}
-	public Canteen QueryCanteen(int C_id){
+	public Canteen QueryCanteen(String C_id){
 		return null;
 		//查询餐厅信息
 	}
 //	public void QueryAllOrder(){
 //		//查询所有订单
 //	}
-	public List<Order> QueryOrder(int T_id){
+	public List<Order> QueryOrder(String T_id){
 		return null;
 		//查询个人订单
 	}
 	
-	public List<Order> QueryOrder(int T_id,String State){
+	public List<Order> QueryOrder(String T_id,String State){
 		return null;
 		//查询个人订单
 	}
@@ -95,27 +95,27 @@ public class Team_service {
 		return false;
 		//管理单位信息
 	}
-	public boolean EstimateOrder(int T_id,int O_id,int C_id,String Estlimate){
+	public boolean EstimateOrder(String T_id,int O_id,String C_id,String Estlimate){
 		return false;
 		//评价订单
 	}
-	public List<Food> CheckFood(int C_id){
+	public List<Food> CheckFood(String C_id){
 		return null;
 		//查看菜品
 	}
-	public Canteen_Bean CheckCanreenInfo(int C_id,int L_id){
+	public Canteen_Bean CheckCanreenInfo(String C_id,String L_id){
 		return null;
 		//查看餐厅信息
 	}
-	public Lincense_Bean CheckLinsenceInfo(int C_id,int L_id){
+	public Lincense_Bean CheckLinsenceInfo(String C_id,String L_id){
 		return null;
 		//查看执照信息
 	}
-	public Sign_Bean CheckSignPersonalInfo(int C_id,int C_sign_id){
+	public Sign_Bean CheckSignPersonalInfo(String C_id,String C_sign_id){
 		return null;
 		//查看注册人信息
 	}
-	public Gathering_Bean CheckGatheringInfo(int C_id,int C_gathering_card){
+	public Gathering_Bean CheckGatheringInfo(String C_id,String C_gathering_card){
 		return null;
 		//查看收款人信息
 	}
@@ -134,17 +134,17 @@ public class Team_service {
 		//查看用餐计划信息
 	}
 	
-	public List<Set_meal>getAllSet_Meal(int T_id){
+	public List<Set_meal>getAllSet_Meal(String T_id){
 		return null;
 		//查询用餐计划
 	}
 	
-	public List<Set_meal>getSet_Meal(int T_id,String state){
+	public List<Set_meal>getSet_Meal(String T_id,String state){
 		return null;
 		//根据状态查询用餐计划
 	}
 	
-	public List<Set_meal>getSet_Meal(int T_id,String startTime,String endTime){
+	public List<Set_meal>getSet_Meal(String T_id,String startTime,String endTime){
 		return null;
 		//根据时间查询用餐计划
 	}

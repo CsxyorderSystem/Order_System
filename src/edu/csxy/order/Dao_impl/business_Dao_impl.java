@@ -9,21 +9,21 @@ public class business_Dao_impl extends BaseDao<Business_Bean> implements busines
 
 	@Override
 	public Boolean setBusinessInfo(Business_Bean Business_Bean) {
-		return null ;
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Business_Bean getBusinessInfo(int B_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Business_Bean getBusiness(int U_id) {
+	public Business_Bean getBusinessInfo(String B_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Business_Bean getBusiness(String U_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
