@@ -19,7 +19,7 @@ import edu.csxy.order.service_domain.User_Bean;
 /**
  * Servlet implementation class Team_servlet
  */
-@WebServlet("/Team_servlet")
+@WebServlet("/test_servlet")
 public class test_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
