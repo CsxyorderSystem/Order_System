@@ -75,7 +75,7 @@ public class BaseDao<T> implements Dao<T>{
 	}
 
 	@Override
-	public boolean delect(String sql, Object... args) {
+	public boolean delete(String sql, Object... args) {
 		boolean r=false;
 		Connection connection=ConnectionContext.getinstance().get();
 		PreparedStatement preparedStatement=null;

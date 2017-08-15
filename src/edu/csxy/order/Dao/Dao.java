@@ -28,7 +28,7 @@ public interface Dao<T> {
 	 * @param args:执行时所需的参数
 	 * @param return：是否成功删除记录
 	 **/
-	boolean delect(String sql,Object...args);
+	boolean delete(String sql,Object...args);
 
 	/**
 	 * 更新记录
@@ -41,6 +41,8 @@ public interface Dao<T> {
 	 *查找记录并返回列表 **/
 	List<T> queryforList(String sql,Object...args);
 	
+	
+	//
 	/**
 	 * 返回数据总条数**/
 	int Countfordate(String sql,Object...args);
