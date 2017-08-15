@@ -1,15 +1,16 @@
 package edu.csxy.order.service_domain;
 
 public class Business_Bean {
-	private int B_id;
+	private String B_id;
 	private String B_name;
 	private String B_phone;
 	private String B_card;
 	private String B_check;
-	public int getB_id() {
+
+	public String getB_id() {
 		return B_id;
 	}
-	public void setB_id(int b_id) {
+	public void setB_id(String b_id) {
 		B_id = b_id;
 	}
 	public String getB_name() {

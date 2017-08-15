@@ -14,9 +14,9 @@ public class team_Dao_impl extends BaseDao<Team_Bean> implements team_Dao {
 	}
 
 	@Override
-	public Team_Bean setTeamInfo(Team_Bean team_Bean) {
+	public boolean setTeamInfo(Team_Bean team_Bean) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
 	}
 
 	@Override

@@ -9,7 +9,7 @@ public interface team_Dao {
 	public List<Team_Bean> getTeamInfo(String T_id);
 	
 	//写入企业用户信息
-	public Team_Bean setTeamInfo(Team_Bean team_Bean);
+	public boolean setTeamInfo(Team_Bean team_Bean);
 	//登录所用
 	public Team_Bean getTeamInfoByUser(String U_id);
 }

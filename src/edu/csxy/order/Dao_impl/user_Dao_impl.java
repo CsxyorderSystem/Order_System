@@ -12,9 +12,9 @@ public class user_Dao_impl extends BaseDao<User_Bean> implements user_Dao {
 	}
 
 	@Override
-	public boolean checkUser(String U_phone, String U_password, String U_id) {
+	public String checkUser(String U_phone, String U_password) {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 	@Override
@@ -24,9 +24,9 @@ public class user_Dao_impl extends BaseDao<User_Bean> implements user_Dao {
 	}
 
 	@Override
-	public boolean alreadysign(String U_phone, String U_id) {
+	public String alreadysign(String U_phone) {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 
