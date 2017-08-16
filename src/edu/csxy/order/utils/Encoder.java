@@ -17,20 +17,20 @@ public class Encoder {
         return newstr;
     }
 
-//	public static void main(String[] args) {
-//		try {
-//			String code = Encoder.EncoderByMd5("XILoveYou4852010000    12448456565");
-//			System.out.println(code);
-//			
-//			if(Encoder.EncoderByMd5("XILoveYou4852010000    12448456565").equals(code)){
-//				System.out.println(code.length());
-//			}
-//		} catch (NoSuchAlgorithmException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (UnsupportedEncodingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+	public static void main(String[] args) {
+		try {
+			String code = Encoder.EncoderByMd5("XILoveYou4852010000    12448456565");
+			System.out.println(code);
+			
+			if(Encoder.EncoderByMd5("XILoveYou4852010000    12448456565").equals(code)){
+				System.out.println(code.length());
+			}
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
