@@ -1,5 +1,7 @@
 package edu.csxy.order.Dao;
 
+import edu.csxy.order.service_domain.User_Bean;
+
 public interface user_Dao {
 		//ĞŞ¸ÄÃÜÂë
 		public boolean changePassword(String U_phone,String U_password,String U_id);

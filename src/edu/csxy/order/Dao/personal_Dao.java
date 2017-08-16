@@ -6,7 +6,7 @@ import edu.csxy.order.service_domain.Person_Bean;
 
 public interface personal_Dao {
 	//查询个人用户信息
-	public List<Person_Bean> getPersonInfo(String P_id);
+	public Person_Bean getPersonInfo(String P_id);
 
 	//更新个人信息
 	public Boolean setPersonInfo(Person_Bean person_Bean);

@@ -10,7 +10,7 @@ public interface Dao<T> {
 	 * @param args：执行时所需要的参数
 	 * @param return：新记录的id
 	 **/
-	int insert(String sql,Object...args);
+	boolean insert(String sql,Object...args);
 	
 	
 	/**

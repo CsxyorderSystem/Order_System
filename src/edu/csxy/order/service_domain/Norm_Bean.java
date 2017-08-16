@@ -1,15 +1,15 @@
 package edu.csxy.order.service_domain;
 
 public class Norm_Bean {
-	private int N_id;
+	private String N_id;
 	private String N_name;
 	private String N_type;
 	private float N_price;
 	private boolean N_state = false;
-	public int getN_id() {
+	public String getN_id() {
 		return N_id;
 	}
-	public void setN_id(int n_id) {
+	public void setN_id(String n_id) {
 		N_id = n_id;
 	}
 	public String getN_name() {

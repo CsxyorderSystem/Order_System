@@ -3,15 +3,15 @@ package edu.csxy.order.service_domain;
 import java.util.Date;
 
 public class Canteen_Request_Bean {
-	private int  CR_id;
+	private String  CR_id;
 	private int C_check;
 	private int C_sign_check;
 	private int L_checck;
 	private int C_garherting_id;
 	private int Permission_check;
-	private int C_id;
-	private int B_id;
-	private int C_sign_id;
+	private String C_id;
+	private String B_id;
+	private String C_sign_id;
 	private String L_id;
 	private int C_gathering_check;
 	private String Perssion_id;
@@ -23,10 +23,10 @@ public class Canteen_Request_Bean {
 	public void setC_time(Date c_time) {
 		C_time = c_time;
 	}
-	public int getCR_id() {
+	public String getCR_id() {
 		return CR_id;
 	}
-	public void setCR_id(int cR_id) {
+	public void setCR_id(String cR_id) {
 		CR_id = cR_id;
 	}
 	public int getC_check() {
@@ -60,22 +60,22 @@ public class Canteen_Request_Bean {
 	public void setPermission_check(int permission_check) {
 		Permission_check = permission_check;
 	}
-	public int getC_id() {
+	public String getC_id() {
 		return C_id;
 	}
-	public void setC_id(int c_id) {
+	public void setC_id(String c_id) {
 		C_id = c_id;
 	}
-	public int getB_id() {
+	public String getB_id() {
 		return B_id;
 	}
-	public void setB_id(int b_id) {
+	public void setB_id(String b_id) {
 		B_id = b_id;
 	}
-	public int getC_sign_id() {
+	public String getC_sign_id() {
 		return C_sign_id;
 	}
-	public void setC_sign_id(int c_sign_id) {
+	public void setC_sign_id(String c_sign_id) {
 		C_sign_id = c_sign_id;
 	}
 	public String getL_id() {

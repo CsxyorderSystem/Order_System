@@ -30,8 +30,8 @@ public class BaseDao<T> implements Dao<T>{
 	}
 
 	@Override
-	public int insert(String sql, Object... args) {
-		int id=0;
+	public boolean insert(String sql, Object... args) {
+		boolean r=false;
 		Connection connection=null;
 		PreparedStatement prepareStatement=null;
 		ResultSet resultSet=null;
@@ -47,18 +47,14 @@ public class BaseDao<T> implements Dao<T>{
 			}
 			
 			prepareStatement.executeUpdate();
-			
-			resultSet= prepareStatement.getGeneratedKeys();
-			if(resultSet.next()){
-				id= resultSet.getInt(1);
-			}
 		} catch(Exception e){
 			e.printStackTrace();
+			return r;
 		} finally{
 			JDBCUtils.release(resultSet, prepareStatement);
 		}
 		
-		return id;
+		return r;
 	}
 
 	@Override

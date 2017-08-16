@@ -1,7 +1,7 @@
-package edu.csxy.order.service_domain;
+ package edu.csxy.order.service_domain;
 
 public class Food_Bean {
-private int F_id;
+private String F_id;
 private String F_name;
 private float F_price;
 private String F_image;
@@ -10,10 +10,10 @@ private float F_estimate;
 private String F_describe;
 private String F_number;
 private String F_discount;
-public int getF_id() {
+public String getF_id() {
 	return F_id;
 }
-public void setF_id(int f_id) {
+public void setF_id(String f_id) {
 	F_id = f_id;
 }
 public String getF_name() {

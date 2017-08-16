@@ -1,7 +1,7 @@
 package edu.csxy.order.service_domain;
 
 public class Order_Bean {
-	private int O_id;
+	private String O_id;
 	private String O_time;
 	private String O_price;
 	private String O_purchase;
@@ -17,10 +17,10 @@ public class Order_Bean {
 	public void setO_reason(String o_reason) {
 		O_reason = o_reason;
 	}
-	public int getO_id() {
+	public String getO_id() {
 		return O_id;
 	}
-	public void setO_id(int o_id) {
+	public void setO_id(String o_id) {
 		O_id = o_id;
 	}
 	public String getO_time() {

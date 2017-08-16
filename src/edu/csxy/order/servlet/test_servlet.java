@@ -36,16 +36,26 @@ public class test_servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		String U_phone=request.getParameter("U_phone");
 		String U_password=request.getParameter("U_password");
+		String U_id=request.getParameter("U_id");
 		user_Dao user=new user_Dao_impl();
-		String result=user.checkUser(U_phone, U_password);
-		if(result!=null){
-			response.getWriter().append(result);
+		String res="修改失败";
+		boolean i=user.sign(U_phone, U_password,U_id);
+		if(i==true){
+			res="修改成功";
 		}
-		//address_Dao address_Dao = new Address_Dao_impl();
-		//Address_Bean result = address_Dao.getAddress("1");
-		//response.getWriter().append("Served at: ").append(request.getContextPath()).append("数据库测试").append(result.getallpath());
+		response.getWriter().append(res);
+		//String result=user.checkUser(U_phone, U_password);
+		//response.getWriter().append(result);
+//		address_Dao address_Dao = new Address_Dao_impl();
+//		Address_Bean result = new Address_Bean();
+//		result.setA_province("asdas");
+//		if(true){
+//			address_Dao.setAddress(result);
+//		}
+//		response.getWriter().append("s");
 	}
 
 	/**

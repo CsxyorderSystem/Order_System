@@ -11,4 +11,12 @@ public class Address_Dao_impl extends BaseDao<Address_Bean> implements address_D
 		return query(sql, A_id);
 	}
 
+	@Override
+	public boolean setAddress(Address_Bean address_Bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
 }
