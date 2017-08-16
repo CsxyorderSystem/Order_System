@@ -4,8 +4,7 @@ public class Business_Bean {
 	private String B_id;
 	private String B_name;
 	private String B_phone;
-	private String B_card;
-	private String B_check;
+
 
 	public String getB_id() {
 		return B_id;
@@ -25,17 +24,5 @@ public class Business_Bean {
 	public void setB_phone(String b_phone) {
 		B_phone = b_phone;
 	}
-	public String getB_card() {
-		return B_card;
-	}
-	public void setB_card(String b_card) {
-		B_card = b_card;
-	}
-	public String getB_check() {
-		return B_check;
-	}
-	public void setB_check(String b_check) {
-		B_check = b_check;
-	}
-	
+
 }

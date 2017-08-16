@@ -6,16 +6,16 @@ public class Canteen_Request_Bean {
 	private String  CR_id;
 	private int C_check;
 	private int C_sign_check;
-	private int L_checck;
-	private int C_garherting_id;
+	private int C_lincense_checck;
+	private String C_garherting_id;
 	private int Permission_check;
 	private String C_id;
 	private String B_id;
 	private String C_sign_id;
-	private String L_id;
+	private String C_lincense_id;
 	private int C_gathering_check;
-	private String Perssion_id;
-	private int Manager;
+	private String C_perssion_id;
+	private String Manager;
 	private Date C_time;
 	public Date getC_time() {
 		return C_time;
@@ -41,16 +41,11 @@ public class Canteen_Request_Bean {
 	public void setC_sign_check(int c_sign_check) {
 		C_sign_check = c_sign_check;
 	}
-	public int getL_checck() {
-		return L_checck;
-	}
-	public void setL_checck(int l_checck) {
-		L_checck = l_checck;
-	}
-	public int getC_garherting_id() {
+
+	public String getC_garherting_id() {
 		return C_garherting_id;
 	}
-	public void setC_garherting_id(int c_garherting_id) {
+	public void setC_garherting_id(String c_garherting_id) {
 		C_garherting_id = c_garherting_id;
 	}
 
@@ -78,11 +73,30 @@ public class Canteen_Request_Bean {
 	public void setC_sign_id(String c_sign_id) {
 		C_sign_id = c_sign_id;
 	}
-	public String getL_id() {
-		return L_id;
+
+	public int getC_lincense_checck() {
+		return C_lincense_checck;
 	}
-	public void setL_id(String l_id) {
-		L_id = l_id;
+	public void setC_lincense_checck(int c_lincense_checck) {
+		C_lincense_checck = c_lincense_checck;
+	}
+	public String getC_lincense_id() {
+		return C_lincense_id;
+	}
+	public void setC_lincense_id(String c_lincense_id) {
+		C_lincense_id = c_lincense_id;
+	}
+	public String getC_perssion_id() {
+		return C_perssion_id;
+	}
+	public void setC_perssion_id(String c_perssion_id) {
+		C_perssion_id = c_perssion_id;
+	}
+	public String getManager() {
+		return Manager;
+	}
+	public void setManager(String manager) {
+		Manager = manager;
 	}
 	public int getC_gathering_check() {
 		return C_gathering_check;
@@ -90,18 +104,7 @@ public class Canteen_Request_Bean {
 	public void setC_gathering_check(int c_gathering_check) {
 		C_gathering_check = c_gathering_check;
 	}
-	public String getPerssion_id() {
-		return Perssion_id;
-	}
-	public void setPerssion_id(String perssion_id) {
-		Perssion_id = perssion_id;
-	}
-	public int getManager() {
-		return Manager;
-	}
-	public void setManager(int manager) {
-		Manager = manager;
-	}
+	
 
 	
 }

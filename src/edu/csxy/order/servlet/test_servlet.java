@@ -8,12 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.csxy.order.Dao.address_Dao;
+import edu.csxy.order.Dao.business_Dao;
 import edu.csxy.order.Dao.user_Dao;
 import edu.csxy.order.Dao.Dao;
 import edu.csxy.order.Dao_impl.Address_Dao_impl;
 import edu.csxy.order.Dao_impl.BaseDao;
+import edu.csxy.order.Dao_impl.business_Dao_impl;
 import edu.csxy.order.Dao_impl.user_Dao_impl;
+import edu.csxy.order.app_domain.Business_User;
 import edu.csxy.order.service_domain.Address_Bean;
+import edu.csxy.order.service_domain.Business_Bean;
 import edu.csxy.order.service_domain.User_Bean;
 
 /**
@@ -36,28 +40,12 @@ public class test_servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String A_province=request.getParameter("A_province");
-		String A_id=request.getParameter("A_id");
-		String A_city=request.getParameter("A_city");
-		String A_district=request.getParameter("A_district");
-		String A_street=request.getParameter("A_street");
-		address_Dao a = new Address_Dao_impl();
-		Address_Bean address_Bean=new Address_Bean();
-		address_Bean.setA_id(A_id);
-		address_Bean.setA_city(A_city);
-		address_Bean.setA_district(A_district);
-		address_Bean.setA_province(A_province);
-		address_Bean.setA_street(A_street);
-		a.changeAddress(address_Bean);
-		response.getWriter().append(address_Bean.getallpath());
-		//String result=user.checkUser(U_phone, U_password);
-		//response.getWriter().append(result);
+		String B_id=request.getParameter("B_id");
+		business_Dao b=new business_Dao_impl();
+		b.getBusinessInfo(B_id);
+		response.getWriter().append(B_id);
 //		address_Dao address_Dao = new Address_Dao_impl();
-
-//		result.setA_province("asdas");
-//		if(true){
 //			address_Dao.setAddress(result);
-//		}
 //		response.getWriter().append("s");
 	}
 

@@ -9,12 +9,12 @@ public interface C_Request_Dao {
 		public List<Canteen_Request_Bean> getAllRequestList();
 		
 		//提交申请单
-		public boolean setRequest(Canteen_Request_Bean canteen_Rquest_Bean);
+		public boolean setRequest(Canteen_Request_Bean canteen_Rquest_Bean,String B_id,String C_id);
 		
 		//查询指定商家申请表
-		public Canteen_Request_Bean getReuqest(int id);
+		public Canteen_Request_Bean getReuqest(String B_id);
 
 		//更改商家入驻申请单
-		public void changeRequestList(Canteen_Request_Bean canteen_Rquest_Bean,int CR_id);
+		public boolean changeRequestList(Canteen_Request_Bean canteen_Rquest_Bean);
 		
 }
