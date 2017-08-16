@@ -6,5 +6,6 @@ public interface address_Dao {
 	
 	public Address_Bean getAddress (String A_id);
 	public boolean setAddress(Address_Bean address_Bean);
+	public boolean changeAddress(Address_Bean address_Bean);
 
 }

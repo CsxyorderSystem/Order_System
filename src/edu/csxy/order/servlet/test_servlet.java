@@ -36,21 +36,24 @@ public class test_servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		String U_phone=request.getParameter("U_phone");
-		String U_password=request.getParameter("U_password");
-		String U_id=request.getParameter("U_id");
-		user_Dao user=new user_Dao_impl();
-		String res="修改失败";
-		boolean i=user.sign(U_phone, U_password,U_id);
-		if(i==true){
-			res="修改成功";
-		}
-		response.getWriter().append(res);
+		String A_province=request.getParameter("A_province");
+		String A_id=request.getParameter("A_id");
+		String A_city=request.getParameter("A_city");
+		String A_district=request.getParameter("A_district");
+		String A_street=request.getParameter("A_street");
+		address_Dao a = new Address_Dao_impl();
+		Address_Bean address_Bean=new Address_Bean();
+		address_Bean.setA_id(A_id);
+		address_Bean.setA_city(A_city);
+		address_Bean.setA_district(A_district);
+		address_Bean.setA_province(A_province);
+		address_Bean.setA_street(A_street);
+		a.changeAddress(address_Bean);
+		response.getWriter().append(address_Bean.getallpath());
 		//String result=user.checkUser(U_phone, U_password);
 		//response.getWriter().append(result);
 //		address_Dao address_Dao = new Address_Dao_impl();
-//		Address_Bean result = new Address_Bean();
+
 //		result.setA_province("asdas");
 //		if(true){
 //			address_Dao.setAddress(result);
