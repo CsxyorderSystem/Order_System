@@ -15,7 +15,7 @@ public interface set_meal_Dao {
 	public List<Set_meal_Bean> getTeamSet_meal(String T_id);
 	
 	//查询用餐计划内容
-	public Set_meal_Bean getSet_meal(int S_id);
+	public Set_meal_Bean getSet_meal(String S_id,String C_id);
 	
 	//根据状态查询餐厅用餐计划
 	public List<Set_meal_Bean> getCanteenSet_meal(String C_id,int S_state);
@@ -30,5 +30,5 @@ public interface set_meal_Dao {
 	public boolean setSet_meal(Set_meal_Bean set_meal_Bean); 
 	
 	//修改价格
-	public boolean changeSet_meal_price(int S_id,float S_price);
+	public boolean changeSet_meal_price(String S_id,float S_price);
 }

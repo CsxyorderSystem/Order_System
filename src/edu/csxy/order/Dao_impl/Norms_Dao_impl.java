@@ -15,12 +15,12 @@ public class Norms_Dao_impl extends BaseDao<Norm_Bean> implements norms_Dao {
 		String sql="select * from norms where C_id=?";
 		return queryforList(sql, C_id);
 	}
-	//更改
+	//更改 
 	@Override
 	public boolean setNorm(Norm_Bean norm_Bean) {
 		// TODO Auto-generated method stub
-		String sql="update norms set N_name=? ,N_type=?,N_price=?";
-		boolean n=update(sql, norm_Bean.getN_name(),norm_Bean.getN_type(),norm_Bean.getN_price());
+		String sql="update norms set N_name=? ,N_type=?,N_price=? where N_id=?";
+		boolean n=update(sql, norm_Bean.getN_name(),norm_Bean.getN_type(),norm_Bean.getN_price(),norm_Bean.getN_id());
 		return n;
 	}
 	//插入

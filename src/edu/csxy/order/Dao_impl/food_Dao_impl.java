@@ -6,7 +6,7 @@ import edu.csxy.order.Dao.food_Dao;
 import edu.csxy.order.service_domain.Food_Bean;
 
 public class food_Dao_impl extends BaseDao<Food_Bean> implements food_Dao {
-	//查询所有菜品信息
+	//查询所有菜品信息 貌似都有问题
 	@Override
 	public Food_Bean getFoodInfo(String F_id) {
 		// TODO Auto-generated method stub

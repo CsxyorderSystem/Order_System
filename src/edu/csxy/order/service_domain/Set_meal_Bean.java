@@ -7,10 +7,24 @@ private String S_describe;
 private String S_uptime;
 private int S_numCer;
 private int S_type;
+private String S_name;
+public String getS_name() {
+	return S_name;
+}
+public void setS_name(String s_name) {
+	S_name = s_name;
+}
+public String getT_id() {
+	return T_id;
+}
+public void setT_id(String t_id) {
+	T_id = t_id;
+}
 private int S_state;
 private String S_starttime;
 private String S_endtime;
 private String C_id;
+private String T_id;
 public String getC_id() {
 	return C_id;
 }
