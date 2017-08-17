@@ -10,7 +10,20 @@ public class Lincense_Bean {
 	private String C_legal_name;
 	private String C_legal_id;
 	private String C_legal_imgae;
-
+	public String getC_id() {
+		return C_id;
+	}
+	public void setC_id(String c_id) {
+		C_id = c_id;
+	}
+	public String getA_id() {
+		return A_id;
+	}
+	public void setA_id(String a_id) {
+		A_id = a_id;
+	}
+	private String C_id;
+	private String A_id;
 	public String getC_lincense_id() {
 		return C_lincense_id;
 	}

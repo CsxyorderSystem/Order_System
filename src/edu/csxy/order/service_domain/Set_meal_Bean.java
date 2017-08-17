@@ -10,6 +10,13 @@ private int S_type;
 private int S_state;
 private String S_starttime;
 private String S_endtime;
+private String C_id;
+public String getC_id() {
+	return C_id;
+}
+public void setC_id(String c_id) {
+	C_id = c_id;
+}
 public String getS_id() {
 	return S_id;
 }

@@ -6,9 +6,10 @@ import edu.csxy.order.service_domain.Gathering_Bean;
 
 public interface gathering_Dao {
 	//查询收款人信息
-	public Gathering_Bean getGatherInfo(String C_id);
+	public String getGatherInfo(String C_id);
 	
 	//写入收款人信息
 	public boolean setGatheringInfo(Gathering_Bean gathering_Bean);
-
+	//修改收款人信息
+	public boolean changeGatheringInfo(Gathering_Bean gathering_Bean);
 }

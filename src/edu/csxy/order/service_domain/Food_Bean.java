@@ -9,7 +9,7 @@ private String F_type;
 private float F_estimate;
 private String F_describe;
 private String F_number;
-private String F_discount;
+private float F_discount;
 public String getF_id() {
 	return F_id;
 }
@@ -59,10 +59,10 @@ public String getF_number() {
 public void setF_number(String f_number) {
 	F_number = f_number;
 }
-public String getF_discount() {
+public float getF_discount() {
 	return F_discount;
 }
-public void setF_discount(String f_discount) {
+public void setF_discount(float f_discount) {
 	F_discount = f_discount;
 }
 public String getF_uptime() {

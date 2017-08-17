@@ -12,5 +12,6 @@ public interface permission_Dao {
 	
 	//查询许可证信息
 	public Permission_Bean getPermissionInfo(String C_id);
-
+	//修改许可证信息
+	public boolean changePermissionInfo(Permission_Bean permission_Bean);
 }

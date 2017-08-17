@@ -69,7 +69,7 @@ public class BaseDao<T> implements Dao<T>{
 		}
 		return null;
 	}
-
+	
 	@Override
 	public boolean delete(String sql, Object... args) {
 		boolean r=false;

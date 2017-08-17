@@ -16,19 +16,25 @@ public class personal_Dao_impl extends BaseDao<Person_Bean> implements personal_
 	}
 
 	@Override
-	public Boolean setPersonInfo(Person_Bean person_Bean) {
-		//修改个人信息
-		String flavor=person_Bean.getP_flavor();	
-		String name=person_Bean.getP_name();
-		String sex=person_Bean.getP_sex();
-		String sql="";
-		update(sql, person_Bean);
+	public Boolean setPersonInfo(Person_Bean person_Bean,String U_id) {
+		//插入个人信息
+		String sql="insert into person values"+" (?,?)";
+		insert(sql, person_Bean.getP_id(),U_id);
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	//获取登录
 	@Override
-	public boolean getPersonalInfo(String U_id) {
+	public Person_Bean getPersonalInfo(String U_id) {
+		// TODO Auto-generated method stub
+		String sql="select * from person where U_id=? ";
+		return query(sql, U_id);
+	}
+	// 这个是修改个人信息 全部完成
+	@Override
+	public boolean changePersonInfo(Person_Bean person_Bean) {
+		String sql=" update person set P_name=?,P_sex=? ,P_flavor=? where P_id=?";
+		update(sql, person_Bean.getP_name(),person_Bean.getP_sex(),person_Bean.getP_flavor(),person_Bean.getP_id());
 		// TODO Auto-generated method stub
 		return false;
 	}

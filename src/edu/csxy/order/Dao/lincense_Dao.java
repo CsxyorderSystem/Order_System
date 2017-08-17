@@ -10,5 +10,7 @@ public interface lincense_Dao {
 	
 	//查询执照信息
 	public Lincense_Bean getLincenseInfo(String C_id);
+	//修改执照信息
+	public boolean changeLincenseInfo(Lincense_Bean lincense_bean);
 
 }

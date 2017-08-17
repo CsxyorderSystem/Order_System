@@ -5,7 +5,20 @@ public class Permission_Bean {
 	private String C_permission_name;
 	private String C_permission_picture;
 	private String C_permission_date;
-
+	private String A_id;
+	public String getC_id() {
+		return C_id;
+	}
+	public void setC_id(String c_id) {
+		C_id = c_id;
+	}
+	private String C_id;
+	public String getA_id() {
+		return A_id;
+	}
+	public void setA_id(String a_id) {
+		A_id = a_id;
+	}
 	public String getC_permission_id() {
 		return C_permission_id;
 	}

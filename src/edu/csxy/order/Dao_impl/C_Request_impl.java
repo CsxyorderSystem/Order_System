@@ -12,18 +12,18 @@ public class C_Request_impl extends BaseDao<Canteen_Request_Bean> implements C_R
 	public List<Canteen_Request_Bean> getAllRequestList() {
 		// TODO Auto-generated method stub
 		String sql="select * from canteen_request";
-		return (List<Canteen_Request_Bean>)query(sql);
+		return queryforList(sql, null);
 	}
 	//插入申请表 完成
 	@Override
-	public boolean setRequest(Canteen_Request_Bean canteen_Rquest_Bean,String B_id,String C_id) {
+	public boolean setRequest(Canteen_Request_Bean canteen_Rquest_Bean) {
 		// TODO Auto-generated method stub
 		String sql="insert into canteen_request values "+" (?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		return insert(sql, canteen_Rquest_Bean.getCR_id(),canteen_Rquest_Bean.getC_check(),canteen_Rquest_Bean.getC_sign_check(),canteen_Rquest_Bean.getC_lincense_checck(),canteen_Rquest_Bean.getC_garherting_id(),canteen_Rquest_Bean.getPermission_check(),C_id,B_id,canteen_Rquest_Bean.getC_sign_id(),canteen_Rquest_Bean.getC_lincense_id(),canteen_Rquest_Bean.getC_gathering_check(),canteen_Rquest_Bean.getC_perssion_id(),canteen_Rquest_Bean.getC_time());
+		return insert(sql, canteen_Rquest_Bean.getCR_id(),canteen_Rquest_Bean.getC_check(),canteen_Rquest_Bean.getC_sign_check(),canteen_Rquest_Bean.getC_lincense_checck(),canteen_Rquest_Bean.getC_gathering_check(),canteen_Rquest_Bean.getPermission_check(),canteen_Rquest_Bean.getC_time(),canteen_Rquest_Bean.getC_id(),canteen_Rquest_Bean.getC_id(),canteen_Rquest_Bean.getC_sign_id(),canteen_Rquest_Bean.getC_lincense_id(),canteen_Rquest_Bean.getC_gathering_id(),canteen_Rquest_Bean.getC_permission_id(),canteen_Rquest_Bean.getManager());
 	}
 
 	@Override
-	//查询商家的店铺申请
+	//查询商家的店铺申请 wancheng
 	public Canteen_Request_Bean getReuqest(String B_id) {
 		// TODO Auto-generated method stub
 		String sql="select * from canteen_Request where B_id=?";

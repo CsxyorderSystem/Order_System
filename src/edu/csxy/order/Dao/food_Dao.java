@@ -6,7 +6,7 @@ import edu.csxy.order.service_domain.Food_Bean;
 
 public interface food_Dao {
 	//查询菜品所有信息
-	public Food_Bean getFoodInfo(int F_id);
+	public Food_Bean getFoodInfo(String F_id);
 	
 	//查询所选店铺里所有菜品
 	public List<Food_Bean> getAllFood(String C_id);
@@ -21,7 +21,7 @@ public interface food_Dao {
 	public boolean deleteFood(String F_id);
 	
 	//修改菜品评分
-	public boolean ChangeEstimate(String F_id,Float estimate);
+	public boolean ChangeEstimate(String F_id,Float F_estimate);
 	
 	//
 	

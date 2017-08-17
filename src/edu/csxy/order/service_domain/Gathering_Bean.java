@@ -6,6 +6,13 @@ public class Gathering_Bean {
 	private String C_gathering_card;
 	private String C_gathering_bank;
 	private String C_gathering_branch;
+	private String C_id;
+	public String getC_id() {
+		return C_id;
+	}
+	public void setC_id(String c_id) {
+		C_id = c_id;
+	}
 	public String getC_gathering_type() {
 		return C_gathering_type;
 	}

@@ -3,7 +3,6 @@ package edu.csxy.order.service_domain;
 public class Canteen_Bean {
 	private String C_id;
 	private String C_name;
-	private String C_address;
 	private String C_type;
 	private String C_scope;
 	private String C_contacts;
@@ -11,8 +10,15 @@ public class Canteen_Bean {
 	private String C_logo;
 	private String C_surface;
 	private String C_environment;
+	private String A_id;
 	
 	
+	public String getA_id() {
+		return A_id;
+	}
+	public void setA_id(String a_id) {
+		A_id = a_id;
+	}
 	public String getC_id() {
 		return C_id;
 	}
@@ -25,12 +31,7 @@ public class Canteen_Bean {
 	public void setC_name(String c_name) {
 		C_name = c_name;
 	}
-	public String getC_address() {
-		return C_address;
-	}
-	public void setC_address(String c_address) {
-		C_address = c_address;
-	}
+
 	public String getC_type() {
 		return C_type;
 	}

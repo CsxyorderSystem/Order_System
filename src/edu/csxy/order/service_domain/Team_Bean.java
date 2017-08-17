@@ -4,7 +4,14 @@ public class Team_Bean {
 	private String T_id;
 	private String T_name;
 	private String T_phone;
-
+	private String T_contacts;
+	private String A_id;
+	public String getA_id() {
+		return A_id;
+	}
+	public void setA_id(String a_id) {
+		A_id = a_id;
+	}
 	public String getT_id() {
 		return T_id;
 	}
@@ -29,13 +36,7 @@ public class Team_Bean {
 	public void setT_contacts(String t_contacts) {
 		T_contacts = t_contacts;
 	}
-	public String getT_address() {
-		return T_address;
-	}
-	public void setT_address(String t_address) {
-		T_address = t_address;
-	}
-	private String T_contacts;
-	private String T_address;
+	
+
 	
 }

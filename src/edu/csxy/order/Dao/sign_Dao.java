@@ -8,5 +8,7 @@ public interface sign_Dao {
 	
 	//查询签约人信息
 	public Sign_Bean getSignInfo(String C_id);
+	//更改签约人信息
+	public boolean changeSignInfo(Sign_Bean sign_Bean);
 
 }

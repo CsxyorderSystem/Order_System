@@ -6,6 +6,14 @@ public class Sign_Bean {
 	private String C_sign_bank;
 	private String C_sign_card;
 	private String C_sign_phone;
+	private String C_id;
+	
+	public String getC_id() {
+		return C_id;
+	}
+	public void setC_id(String c_id) {
+		C_id = c_id;
+	}
 	public String getC_sign_name() {
 		return C_sign_name;
 	}
