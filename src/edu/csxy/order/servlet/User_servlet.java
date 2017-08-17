@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import edu.csxy.order.app_domain.Business_User;
+import edu.csxy.order.app_domain.Person_User;
+import edu.csxy.order.app_domain.Team_User;
+import edu.csxy.order.service.Business_service;
+import edu.csxy.order.service.Person_service;
+import edu.csxy.order.service.Team_service;
 import edu.csxy.order.service.User_service;
 import edu.csxy.order.service_domain.User_Bean;
 import edu.csxy.order.utils.Encoder;
@@ -20,6 +26,11 @@ import edu.csxy.order.utils.Encoder;
 public class User_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private User_service user_service = new User_service();
+	private Person_service person_service = new Person_service();
+	private Team_service team_service = new Team_service();
+	private Business_service business_service = new Business_service();
+	public static String errorMassage = "";
+	Gson gson = new Gson();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -39,14 +50,32 @@ public class User_servlet extends HttpServlet {
 			String json_str = request.getParameter("JSON");
 			String type = request.getParameter("type");
 			String result = "";
-			Gson gson = new Gson();
 			User_Bean newUser = gson.fromJson(json_str,User_Bean.class );
 			if(user_service.Sign(newUser, type)) {
 				result = "注册成功";
 			}else {
 				result = "注册失败";
 			}
-			response.getWriter().append("Served at: ").append(result);
+			response.getWriter().append(result);
+		}if(method.equals("login")) {
+			String json_str = request.getParameter("JSON");
+			String type = request.getParameter("type");
+			User_Bean Bean = gson.fromJson(json_str,User_Bean.class );
+			Object result = user_service.Login(Bean, type,errorMassage);
+			if (result!=null) {
+				if(type.equals("个人用户")) {
+					Person_User user = (Person_User) result;
+					response.getWriter().append(gson.toJson(user));
+				}else if (type.equals("单位用户")) {
+					Team_User user = (Team_User) result;
+					response.getWriter().append(gson.toJson(user));
+				}else if (type.equals("商家用户")) {
+					Business_User user = (Business_User) result;
+					response.getWriter().append(gson.toJson(user));
+				}
+			}else {
+				response.getWriter().append(errorMassage);
+			}
 		}
 	}
 

@@ -1,9 +1,9 @@
 package edu.csxy.order.service_domain;
 
 public class User_Bean {
-	private String U_id;
-	private String U_phone;
-	private String U_password;
+	private String U_id="";
+	private String U_phone="";
+	private String U_password="";
 
 	
 	public String getU_id() {

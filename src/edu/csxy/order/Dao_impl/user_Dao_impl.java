@@ -19,7 +19,11 @@ public class user_Dao_impl extends BaseDao<User_Bean> implements user_Dao {
 		//登录 已完成
 		String sql= "select * from user where U_phone=? and U_password=?";//获取账号密码
 		User_Bean user=query(sql,U_phone,U_password);
-		return user.getU_id();
+		if (user == null){
+			return "";
+		}else {
+			return user.getU_id();
+		}
 		// TODO Auto-generated method stub
 	}
 

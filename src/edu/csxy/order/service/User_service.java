@@ -1,7 +1,6 @@
 package edu.csxy.order.service;
 
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
+
 
 import edu.csxy.order.Dao.business_Dao;
 import edu.csxy.order.Dao.personal_Dao;
@@ -11,10 +10,13 @@ import edu.csxy.order.Dao_impl.business_Dao_impl;
 import edu.csxy.order.Dao_impl.personal_Dao_impl;
 import edu.csxy.order.Dao_impl.team_Dao_impl;
 import edu.csxy.order.Dao_impl.user_Dao_impl;
+import edu.csxy.order.app_domain.Business_User;
+import edu.csxy.order.app_domain.Team_User;
 import edu.csxy.order.service_domain.Business_Bean;
 import edu.csxy.order.service_domain.Person_Bean;
 import edu.csxy.order.service_domain.Team_Bean;
 import edu.csxy.order.service_domain.User_Bean;
+import edu.csxy.order.servlet.User_servlet;
 import edu.csxy.order.utils.Encoder;
 import edu.csxy.order.utils.idFactory;
 
@@ -27,9 +29,46 @@ public class User_service {
 	personal_Dao Personal_Dao = new personal_Dao_impl();
 	team_Dao  Team_Dao =new team_Dao_impl();
 	business_Dao business_Dao = new business_Dao_impl();
-	public boolean Login(User_Bean userBean, String user_type){
-		
-		return false;
+	public Object Login(User_Bean userBean, String user_type,String errorMessage){
+		userBean.setU_password(Encoder.EncoderByMd5(userBean.getU_password()));
+		Object result = null;
+		String U_id = User_Dao.checkUser(userBean.getU_phone(), userBean.getU_password());
+		if (U_id.equals("")) {
+			User_servlet.errorMassage = "用户名密码有误";
+		}else {
+			userBean.setU_id(U_id);
+			if (user_type.equals(type_person)) {
+				//Person_Bean person_Bean = Personal_Dao.getPersonalInfo(U_id);
+			}
+			else if(user_type.equals(type_team)) {
+				Team_Bean team_Bean = Team_Dao.getTeamInfoByUser(U_id);
+				if(team_Bean!=null) {
+					Team_User user = new Team_User();
+					user.setT_id(team_Bean.getT_id());
+					user.setT_name(team_Bean.getT_name());
+					user.setT_phone(team_Bean.getT_phone());
+					user.setT_contacts(team_Bean.getT_contacts());
+					user.setUser(userBean);
+					result = user;
+				}else {
+					User_servlet.errorMassage="用户类型有误请重新选择";
+				}
+			}
+			else if(user_type.equals(type_business)) {
+				Business_Bean business_Bean = business_Dao.getBusiness(U_id);
+				if(business_Dao!=null) {
+					Business_User user = new Business_User();
+					user.setB_id(business_Bean.getB_id());
+					user.setB_name(business_Bean.getB_name());
+					user.setB_phone(business_Bean.getB_phone());
+					user.setUser(userBean);
+					result = user ;
+				}else {
+					User_servlet.errorMassage="用户类型有误请重新选择";
+				}
+			}
+		}
+		return result;
 		//用户登录
 	}
 
@@ -46,17 +85,17 @@ public class User_service {
 		}else{
 			userBean.setU_id(User_Dao.alreadysign(userBean.getU_phone()));//用户存在返回用户号
 		}
-		if(type.equals(type_person)){//根据请求类型创建相应的具体用户类型
+		if(type.equals(type_person)&&falg){//根据请求类型创建相应的具体用户类型
 			Person_Bean person_Bean = new Person_Bean();
 			person_Bean.setP_id(idFactory.createPersonId());
 			falg = Personal_Dao.setPersonInfo(person_Bean);
 		}
-		else if(type.equals(type_team)){
+		else if(type.equals(type_team)&&falg){
 			Team_Bean team_Bean = new Team_Bean();
 			team_Bean.setT_id(idFactory.createTeamId());
 			falg = Team_Dao.setTeamInfo(team_Bean);
 		}
-		else {
+		else if(type.equals("商家用户")&&falg){
 			Business_Bean business_Bean= new Business_Bean();
 			business_Bean.setB_id(idFactory.createBusinessId());
 			falg = business_Dao.setBusinessInfo(business_Bean, userBean.getU_id());
