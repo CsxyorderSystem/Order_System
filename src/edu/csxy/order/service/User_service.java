@@ -19,9 +19,9 @@ import edu.csxy.order.utils.Encoder;
 import edu.csxy.order.utils.idFactory;
 
 public class User_service {
-	final static String type_person = "个人";
-	final static String type_team = "单位";
-	final static String type_business = "商家";
+	final static String type_person = "个人用户";
+	final static String type_team = "单位用户";
+	final static String type_business = "商家用户";
 	
 	user_Dao User_Dao = new user_Dao_impl();
 	personal_Dao Personal_Dao = new personal_Dao_impl();
@@ -37,15 +37,10 @@ public class User_service {
 		boolean falg = false;
 		
 		
-		try {//用户密码加密
-			Encoder.EncoderByMd5(userBean.getU_password());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		userBean.setU_password(Encoder.EncoderByMd5(userBean.getU_password()));
 		
 		
-		if(userBean.getU_password().equals("")){//验证用户是否存在
+		if(!userBean.getU_password().equals(" ")){//验证用户是否存在
 			userBean.setU_id(idFactory.createUserId());
 			falg = User_Dao.sign(userBean.getU_phone(),userBean.getU_password(),userBean.getU_id()); //用户不存在则添加用户
 		}else{
@@ -64,7 +59,7 @@ public class User_service {
 		else {
 			Business_Bean business_Bean= new Business_Bean();
 			business_Bean.setB_id(idFactory.createBusinessId());
-			falg = business_Dao.setBusinessInfo(business_Bean);
+			falg = business_Dao.setBusinessInfo(business_Bean, userBean.getU_id());
 		}
 		return falg;
 		//用户注册

@@ -28,7 +28,7 @@ public class user_Dao_impl extends BaseDao<User_Bean> implements user_Dao {
 		//注册用户  已完成
 		String sql="insert into user values "+"(?,?,?)"; //插入注册操作，但需要先进行检查是否被注册
 		// TODO Auto-generated method stub
-		return  insert(sql,U_phone,U_password,U_id);
+		return  insert(sql,U_id,U_phone,U_password);
 	}
 
 	@Override

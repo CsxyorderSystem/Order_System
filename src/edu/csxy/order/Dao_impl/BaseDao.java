@@ -47,6 +47,7 @@ public class BaseDao<T> implements Dao<T>{
 			}
 			
 			prepareStatement.executeUpdate();
+			r = true;
 		} catch(Exception e){
 			e.printStackTrace();
 			return r;
