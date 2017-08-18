@@ -12,4 +12,6 @@ public interface norms_Dao {
 	public boolean setNorm(Norm_Bean norm_Bean);
 	//插入菜品规格
 	public boolean NormInfo(Norm_Bean norm_Bean);
+	// 用菜品查整个LIST
+	public List<Norm_Bean> queryList(String F_id);
 }

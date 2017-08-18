@@ -31,6 +31,13 @@ public class Norms_Dao_impl extends BaseDao<Norm_Bean> implements norms_Dao {
 		boolean n=insert(sql, norm_Bean.getN_id(),norm_Bean.getN_name(),norm_Bean.getN_type(),norm_Bean.getN_price(),norm_Bean.getC_id());
 		return n;
 	}
+	// 用菜品查整个LIST
+	@Override
+	public List<Norm_Bean> queryList(String F_id) {
+		// TODO Auto-generated method stub
+		String sql="select * from norms where F_id=?";
+		return queryforList(sql, F_id);
+	}
 
 
 	
