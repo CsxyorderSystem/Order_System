@@ -2,6 +2,7 @@ package edu.csxy.order.app_domain;
 
 import java.util.List;
 
+import edu.csxy.order.service_domain.Address_Bean;
 import edu.csxy.order.service_domain.Canteen_Bean;
 import edu.csxy.order.service_domain.FoodType_Bean;
 import edu.csxy.order.service_domain.Gathering_Bean;
@@ -11,6 +12,7 @@ import edu.csxy.order.service_domain.Permission_Bean;
 import edu.csxy.order.service_domain.Sign_Bean;
 
 public class Canteen extends Canteen_Bean{
+	private Address_Bean address;
 	private Lincense_Bean lincese;
 	private Sign_Bean sign;
 	private Gathering_Bean gathering;
@@ -20,6 +22,14 @@ public class Canteen extends Canteen_Bean{
 	private List<Set_meal> set_meals;
 	private List<FoodType_Bean> food_types;
 	private List<Order> orders;
+	
+
+	public Address_Bean getAddress() {
+		return address;
+	}
+	public void setAddress(Address_Bean address) {
+		this.address = address;
+	}
 	public Lincense_Bean getLincese() {
 		return lincese;
 	}

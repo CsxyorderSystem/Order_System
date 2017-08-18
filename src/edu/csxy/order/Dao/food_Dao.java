@@ -23,8 +23,7 @@ public interface food_Dao {
 	//修改菜品评分
 	public boolean ChangeEstimate(String F_id,Float F_estimate);
 	
-	//根据订单号查询所有得菜品
-	public List<Food_Bean> queryfood(String O_id);
+	//
 	
 	
 }

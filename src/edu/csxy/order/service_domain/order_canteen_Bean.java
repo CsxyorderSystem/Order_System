@@ -3,7 +3,7 @@ package edu.csxy.order.service_domain;
 public class order_canteen_Bean {
 	private String O_id;
 	private	String T_id;
-
+	private String C_id;
 	public String getO_id() {
 		return O_id;
 	}
@@ -16,6 +16,11 @@ public class order_canteen_Bean {
 	public void setT_id(String t_id) {
 		T_id = t_id;
 	}
-
+	public String getC_id() {
+		return C_id;
+	}
+	public void setC_id(String c_id) {
+		C_id = c_id;
+	}
 
 }

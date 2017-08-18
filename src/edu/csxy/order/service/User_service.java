@@ -32,10 +32,10 @@ public class User_service {
 	public Object Login(User_Bean userBean, String user_type,String errorMessage){
 		userBean.setU_password(Encoder.EncoderByMd5(userBean.getU_password()));
 		Object result = null;
-		String U_id = User_Dao.checkUser(userBean.getU_phone(), userBean.getU_password());
+		String U_id = User_Dao.checkUser(userBean.getU_phone(), userBean.getU_password());//判断用户密码是否正确
 		if (U_id.equals("")) {
 			User_servlet.errorMassage = "用户名密码有误";
-		}else {
+		}else {//根据用户登录类型匹配
 			userBean.setU_id(U_id);
 			if (user_type.equals(type_person)) {
 				//Person_Bean person_Bean = Personal_Dao.getPersonalInfo(U_id);
@@ -88,12 +88,12 @@ public class User_service {
 		if(type.equals(type_person)&&falg){//根据请求类型创建相应的具体用户类型
 			Person_Bean person_Bean = new Person_Bean();
 			person_Bean.setP_id(idFactory.createPersonId());
-			falg = Personal_Dao.setPersonInfo(person_Bean);
+			falg = Personal_Dao.setPersonInfo(person_Bean,userBean.getU_id());
 		}
 		else if(type.equals(type_team)&&falg){
 			Team_Bean team_Bean = new Team_Bean();
 			team_Bean.setT_id(idFactory.createTeamId());
-			falg = Team_Dao.setTeamInfo(team_Bean);
+			falg = Team_Dao.setTeamInfo(team_Bean,userBean.getU_id());
 		}
 		else if(type.equals("商家用户")&&falg){
 			Business_Bean business_Bean= new Business_Bean();
@@ -105,7 +105,7 @@ public class User_service {
 	}
 	
 	public boolean ForgetPassword(String phone,String newPassword){
-		return false;
+		return User_Dao.forgetPassword(newPassword, phone);
 		//忘记密码
 	}
 	
@@ -113,6 +113,10 @@ public class User_service {
 		boolean falg = false;
 		if(!User_Dao.alreadysign(U_Phone).equals("")) falg = true;
 		return falg;
-		
+		//确认用户是否已经被注册
+	}
+	
+	public boolean changePassword(User_Bean userBean) {
+		return User_Dao.changePassword(userBean.getU_phone(), userBean.getU_password(), userBean.getU_id());
 	}
 }

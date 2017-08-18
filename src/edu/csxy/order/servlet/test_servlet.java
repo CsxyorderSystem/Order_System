@@ -44,8 +44,6 @@ public class test_servlet extends HttpServlet {
 		business_Dao b=new business_Dao_impl();
 		b.getBusinessInfo(B_id);
 		response.getWriter().append(B_id);
-		String sql="select * from `order`,person_order_canteen where ";
-		System.out.println(sql);
 //		address_Dao address_Dao = new Address_Dao_impl();
 //			address_Dao.setAddress(result);
 //		response.getWriter().append("s");

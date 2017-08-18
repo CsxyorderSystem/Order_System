@@ -7,7 +7,7 @@ import edu.csxy.order.service_domain.Norm_Bean;
 
 public class Food extends Food_Bean{
 	private List<Norm_Bean> norms ;
-	private int count;
+	private int count = 0;
 	public List<Norm_Bean> getNorms() {
 		return norms;
 	}

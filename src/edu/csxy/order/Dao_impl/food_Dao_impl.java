@@ -70,13 +70,6 @@ public class food_Dao_impl extends BaseDao<Food_Bean> implements food_Dao {
 		
 		return insert(sql,F_estimate,F_id );
 	}
-	//根据订单号查询所有得菜品
-	@Override
-	public List<Food_Bean> queryfood(String O_id) {
-		// TODO Auto-generated method stub
-		String sql="select * from food where O_id=?";
-		return queryforList(sql, O_id);
-	}
 
 
 	
