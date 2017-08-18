@@ -10,7 +10,11 @@ public class gathering_Dao_impl extends BaseDao<Gathering_Bean> implements gathe
 		// TODO Auto-generated method stub
 		String sql="select C_gathering_name from gathering where C_id=?";
 		Gathering_Bean g = query(sql, C_id);
-		return g.getC_gathering_name();
+		if(g==null){
+			return "";
+		}
+		else{
+		return g.getC_gathering_name();}
 	}
 	//插入收款人信息
 	@Override

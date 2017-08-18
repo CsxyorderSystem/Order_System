@@ -42,7 +42,12 @@ public class user_Dao_impl extends BaseDao<User_Bean> implements user_Dao {
 		String sql="select * from user where U_phone=?";//进行查询注册操作
 		query(sql, U_phone);
 		User_Bean user=query(sql,U_phone);
+		if (user==null){
+			return "" ;
+		}
+		else{
 		return user.getU_id();//若被注册，返回注册的id
+		}
 	}
 
 	@Override
