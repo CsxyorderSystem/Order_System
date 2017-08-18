@@ -48,6 +48,7 @@ public class User_service {
 					user.setT_name(team_Bean.getT_name());
 					user.setT_phone(team_Bean.getT_phone());
 					user.setT_contacts(team_Bean.getT_contacts());
+					user.set
 					user.setUser(userBean);
 					result = user;
 				}else {
