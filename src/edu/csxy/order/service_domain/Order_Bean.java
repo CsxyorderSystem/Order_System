@@ -9,8 +9,14 @@ public class Order_Bean {
 	private String O_state;
 	private String O_usetime;
 	private String O_reason;
-	
+	private String C_id;
 
+	public String getC_id() {
+		return C_id;
+	}
+	public void setC_id(String c_id) {
+		C_id = c_id;
+	}
 	public String getO_reason() {
 		return O_reason;
 	}

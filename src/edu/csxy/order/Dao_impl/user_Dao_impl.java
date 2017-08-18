@@ -45,5 +45,13 @@ public class user_Dao_impl extends BaseDao<User_Bean> implements user_Dao {
 		return user.getU_id();//Èô±»×¢²á£¬·µ»Ø×¢²áµÄid
 	}
 
+	@Override
+	public boolean forgetPassword(String U_phone,String U_password) {
+		// TODO Auto-generated method stub
+		String sql="update user set U_password=? where U_phone=?";
+		
+		return update(sql, U_password,U_phone);
+	}
+
 
 }

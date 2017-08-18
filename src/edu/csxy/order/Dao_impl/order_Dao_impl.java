@@ -40,7 +40,7 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 	@Override
 	public List<Order_Bean> getCanteenOrderInfo(String C_id) {
 		// TODO Auto-generated method stub
-		String sql="select * from order,person_order_canteen,team_order_canteen where C_id=?";
+		String sql="select * from order where C_id=?";
 		return queryforList(sql, C_id);
 	}
 	//查看个人得所有订单
