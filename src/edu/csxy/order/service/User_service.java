@@ -2,10 +2,12 @@ package edu.csxy.order.service;
 
 
 
+import edu.csxy.order.Dao.address_Dao;
 import edu.csxy.order.Dao.business_Dao;
 import edu.csxy.order.Dao.personal_Dao;
 import edu.csxy.order.Dao.team_Dao;
 import edu.csxy.order.Dao.user_Dao;
+import edu.csxy.order.Dao_impl.Address_Dao_impl;
 import edu.csxy.order.Dao_impl.business_Dao_impl;
 import edu.csxy.order.Dao_impl.personal_Dao_impl;
 import edu.csxy.order.Dao_impl.team_Dao_impl;
@@ -29,6 +31,8 @@ public class User_service {
 	personal_Dao Personal_Dao = new personal_Dao_impl();
 	team_Dao  Team_Dao =new team_Dao_impl();
 	business_Dao business_Dao = new business_Dao_impl();
+	address_Dao address_dao =new Address_Dao_impl();
+	
 	public Object Login(User_Bean userBean, String user_type,String errorMessage){
 		userBean.setU_password(Encoder.EncoderByMd5(userBean.getU_password()));
 		Object result = null;
@@ -48,7 +52,8 @@ public class User_service {
 					user.setT_name(team_Bean.getT_name());
 					user.setT_phone(team_Bean.getT_phone());
 					user.setT_contacts(team_Bean.getT_contacts());
-					user.set
+					user.setA_id(team_Bean.getA_id());
+					user.setAddress(address_dao.getAddress(user.getA_id()));
 					user.setUser(userBean);
 					result = user;
 				}else {

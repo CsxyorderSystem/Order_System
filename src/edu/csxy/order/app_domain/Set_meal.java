@@ -6,16 +6,16 @@ import edu.csxy.order.service_domain.Set_meal_Bean;
 import edu.csxy.order.service_domain.Team_Bean;
 
 public class Set_meal extends Set_meal_Bean{
-	private List<Set_meal> orders;
+	private List<Order> orders;
 	private Team_Bean team;
 	private String[] OSM_person;
 	private int OSM_number;
 	
 	
-	public List<Set_meal> getOrders() {
+	public List<Order> getOrders() {
 		return orders;
 	}
-	public void setOrders(List<Set_meal> orders) {
+	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
 	public Team_Bean getTeam() {

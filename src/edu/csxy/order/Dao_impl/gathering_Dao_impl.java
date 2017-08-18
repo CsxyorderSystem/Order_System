@@ -6,15 +6,10 @@ import edu.csxy.order.service_domain.Gathering_Bean;
 public class gathering_Dao_impl extends BaseDao<Gathering_Bean> implements gathering_Dao {
 	//查询收款人姓名
 	@Override
-	public String getGatherInfo(String C_id) {
+	public Gathering_Bean getGatherInfo(String C_id) {
 		// TODO Auto-generated method stub
 		String sql="select C_gathering_name from gathering where C_id=?";
-		Gathering_Bean g = query(sql, C_id);
-		if(g==null){
-			return "";
-		}
-		else{
-		return g.getC_gathering_name();}
+		return query(sql, C_id);
 	}
 	//插入收款人信息
 	@Override
