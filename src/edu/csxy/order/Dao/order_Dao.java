@@ -43,4 +43,9 @@ public interface order_Dao {
 	public String getPid(String O_id);
 	//根据订单返回U——id
 	public String getTid(String O_id);
+	//插入t_id
+	public boolean insertTid(String O_id,String T_id);
+	
+	//插入p_id
+	public boolean insertPid(String O_id,String P_id);
 }

@@ -104,5 +104,19 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	//≤Â»ÎTID order team
+	@Override
+	public boolean insertTid(String O_id, String T_id) {
+		// TODO Auto-generated method stub
+		String sql="insert into person_order_canteen values "+" (?,?)";
+		return insert(sql, O_id,T_id);
+	}
+	//≤Â»ÎPIDµΩorder person
+	@Override
+	public boolean insertPid(String O_id, String P_id) {
+		// TODO Auto-generated method stub
+		String sql="insert into team_order_canteen values "+" (?,?)";
+		return insert(sql, O_id,P_id);
+	}
 
 }
