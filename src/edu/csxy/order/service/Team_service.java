@@ -225,7 +225,7 @@ public class Team_service {
 			Order_Bean data = dataScoure.get(i);
 			order.setC_id(data.getC_id());
 			List<Food_Bean> food_Beans = food_dao.get
-			order.setFoods(data.);//创建订单内的菜品列表
+			order.setFoods(foodtype_dao.get);//创建订单内的菜品列表
 			order.setO_estimate(data.getO_estimate());
 			order.setO_id(data.getO_id());
 			order.setO_price(data.getO_price());

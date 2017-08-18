@@ -38,5 +38,7 @@ public interface order_Dao {
 	public List<Order_Bean> getTeamOrderInfo(String T_id,String state);
 	
 	//根据状态查询计划所包含的订单
-	public List<Order_Bean> getSetMealOrderInfo(String S_id,String state);
+	public List<Order_Bean> getSetMealOrderInfo(String S_id,String O_state);
+	//根据订单号获取id
+	public String getid(String O_id);
 }

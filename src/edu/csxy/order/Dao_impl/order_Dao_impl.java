@@ -86,5 +86,11 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public String getid(String O_id) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
 
 }
