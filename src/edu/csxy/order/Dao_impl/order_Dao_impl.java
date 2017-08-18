@@ -94,9 +94,14 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 		return queryforList(sql, S_id,O_state);
 	}
 	@Override
-	public String getid(String O_id) {
+	public String getTid(String O_id) {
 		// TODO Auto-generated method stub
-		
+		String sql="";
+		return null;
+	}
+	@Override
+	public String getPid(String O_id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
