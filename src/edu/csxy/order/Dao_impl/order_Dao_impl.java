@@ -93,5 +93,11 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 		String sql="select * from `order`,order_setmeal where `order`.O_id=order_setmeal.O_id and S_id=? and O_state=?";
 		return queryforList(sql, S_id,O_state);
 	}
+	@Override
+	public String getid(String O_id) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
 
 }
