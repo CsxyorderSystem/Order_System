@@ -29,13 +29,13 @@ public interface order_Dao {
 	public List<Order_Bean> getSetMealOrderInfo(String S_id);
 	
 	//根据状态查询所有餐厅订单信息
-	public List<Order_Bean> getCanteenOrderInfo(String C_id,String state);
+	public List<Order_Bean> getCanteenOrderInfo(String C_id,String O_state);
 	
 	//根据状态查询所有个人订单信息
-	public List<Order_Bean> getPersonOrderInfo(String P_id,String state);
+	public List<Order_Bean> getPersonOrderInfo(String P_id,String O_state);
 	
 	//根据状态查询所有单位订单信息
-	public List<Order_Bean> getTeamOrderInfo(String T_id,String state);
+	public List<Order_Bean> getTeamOrderInfo(String T_id,String O_state);
 	
 	//根据状态查询计划所包含的订单
 	public List<Order_Bean> getSetMealOrderInfo(String S_id,String O_state);
