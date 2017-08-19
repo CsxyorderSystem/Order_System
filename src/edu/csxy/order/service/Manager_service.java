@@ -7,11 +7,13 @@ import edu.csxy.order.Dao.manager_Dao;
 import edu.csxy.order.Dao_impl.C_Request_impl;
 import edu.csxy.order.Dao_impl.manager_Dao_impl;
 import edu.csxy.order.app_domain.Canteen_Request;
+import edu.csxy.order.service_domain.Canteen_Request_Bean;
 
 public class Manager_service {
 	manager_Dao manager=new manager_Dao_impl();
-	C_Request_Dao c_Request=new C_Request_impl();
-	public Canteen_Request CheakRequest(int CR_id) {
+	C_Request_Dao c_Request_dao =new C_Request_impl();
+	public Canteen_Request CheakRequest(String CR_id) {
+		
 		return null;
 		//查询商家入驻请求
 	}
@@ -31,5 +33,10 @@ public class Manager_service {
 	}
 	public void ReleasePromotion(){
 		//发布推广
+	}
+	
+	public Canteen_Request createC_Request(Canteen_Request_Bean data){
+		Canteen_Request request = new Canteen_Request();
+		request.set
 	}
 }

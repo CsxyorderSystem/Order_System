@@ -99,7 +99,8 @@ public class Team_service {
 	public boolean CreateOrder(Order newOrder,String T_id){
 		
 		order_dao.AddOrder(newOrder);
-		order_dao.
+		order_dao.insertTid(newOrder.getO_id(), T_id);
+		food_dao.//Dao问题
 		return false;
 		//创建订单
 	} 
@@ -165,7 +166,7 @@ public class Team_service {
 	
 	public List<Set_meal>getSet_Meal(String T_id,String state){
 		//判断状态
-		return createSet_meal(set_meal_dao.getTeamSet_meal(T_id, state));
+		return createSet_meal(set_meal_dao.getTeamSet_meal(T_id, state));//Dao修改
 		//根据状态查询用餐计划
 	}
 	
