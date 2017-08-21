@@ -11,6 +11,9 @@ public class Canteen_Bean {
 	private String C_surface;
 	private String C_environment;
 	private String A_id;
+	private float C_estimate;
+	private String C_open = "²»¿ªµê";
+	private Float C_balance;
 	
 	
 	public String getA_id() {
@@ -92,7 +95,5 @@ public class Canteen_Bean {
 	public void setC_balance(Float c_balance) {
 		C_balance = c_balance;
 	}
-	private float C_estimate;
-	private String C_open;
-	private Float C_balance;
+
 }

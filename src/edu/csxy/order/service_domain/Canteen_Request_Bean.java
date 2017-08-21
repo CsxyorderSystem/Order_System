@@ -4,14 +4,20 @@ import java.util.Date;
 
 public class Canteen_Request_Bean {
 	private String  CR_id;
-	private int C_check;
-	private int C_sign_check;
-	private int C_lincense_checck;
-	private int Permission_check;
-	private int C_gathering_check;
-	private Date C_time;
+	private int C_check=0;
+	private int C_sign_check=0;
+	private int C_lincense_check=0;
+	private int Permission_check=0;
+	private int C_gathering_check=0;
+	private String C_time;
 	private String C_id;
 	private String B_id;
+	private int C_sign_id;
+	private String 	C_lincense_id;
+	private int C_gathering_id;
+	private String C_permission_id;
+	private String Manager;
+	
 	public String getC_id() {
 		return C_id;
 	}
@@ -54,15 +60,10 @@ public class Canteen_Request_Bean {
 	public void setManager(String manager) {
 		Manager = manager;
 	}
-	private int C_sign_id;
-	private String 	C_lincense_id;
-	private int C_gathering_id;
-	private String C_permission_id;
-	private String Manager;
-	public Date getC_time() {
+	public String getC_time() {
 		return C_time;
 	}
-	public void setC_time(Date c_time) {
+	public void setC_time(String c_time) {
 		C_time = c_time;
 	}
 	public String getCR_id() {
@@ -92,11 +93,11 @@ public class Canteen_Request_Bean {
 		Permission_check = permission_check;
 	}
 	
-	public int getC_lincense_checck() {
-		return C_lincense_checck;
+	public int getC_lincense_check() {
+		return C_lincense_check;
 	}
-	public void setC_lincense_checck(int c_lincense_checck) {
-		C_lincense_checck = c_lincense_checck;
+	public void setC_lincense_check(int c_lincense_check) {
+		C_lincense_check = c_lincense_check;
 	}
 	public int getC_gathering_check() {
 		return C_gathering_check;

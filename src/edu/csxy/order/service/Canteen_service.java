@@ -29,6 +29,7 @@ import edu.csxy.order.Dao_impl.permission_Dao_impl;
 import edu.csxy.order.Dao_impl.promotion_Dao_impl;
 import edu.csxy.order.Dao_impl.set_meal_Dao_impl;
 import edu.csxy.order.Dao_impl.sign_Dao_impl;
+import edu.csxy.order.app_domain.Canteen_Request;
 import edu.csxy.order.app_domain.Food;
 import edu.csxy.order.app_domain.Order;
 import edu.csxy.order.app_domain.Set_meal;
@@ -42,6 +43,7 @@ import edu.csxy.order.service_domain.Norm_Bean;
 import edu.csxy.order.service_domain.Order_Bean;
 import edu.csxy.order.service_domain.Set_meal_Bean;
 import edu.csxy.order.service_domain.Sign_Bean;
+import edu.csxy.order.utils.idFactory;
 
 public class Canteen_service {
 		canteen_Dao canteen_dao=new canteen_Dao_impl();
@@ -57,8 +59,18 @@ public class Canteen_service {
 		set_meal_Dao set_meal_dao = new set_meal_Dao_impl();
 		promotion_Dao promotion_dao=new promotion_Dao_impl();
 		foodtype_Dao foodtype_dao=new foodtype_Dao_impl();
-		public boolean QuailityRequest(Canteen_Request_Bean canteen_Request_Bean){
-			return 	c_Request_dao.setRequest(canteen_Request_Bean);
+		public boolean QuailityRequest(Canteen_Request canteen_Request){
+			canteen_Request.getCanteen().setC_id(idFactory.createCanteenId());
+			canteen_Request.getLincense().setC_lincense_id(idFactory.createLincenseId());
+			canteen_Request.getPermission().setC_permission_id(idFactory.createPermissionId());
+			canteen_Request.getSign().setC_sign_id(idFactory.createSignId());
+			canteen_Request.setCR_id(idFactory.createRequestId());//配置id
+			boolean r = c_Request_dao.setRequest(canteen_Request)&&canteen_dao.addCanteen(canteen_Request.getCanteen())
+					&&	lincense_dao.setLincenseInfo(canteen_Request.getLincense())
+					&&	permission_dao.setPermissionInfo(canteen_Request.getPermission())
+					&&gathering_dao.setGatheringInfo(canteen_Request.getGathering())
+					&&	sign_dao.setSignInfo(canteen_Request.getSign());
+			return r;
 			//申请入驻
 		}
 		public List<Order> QueryOrder(String C_id){
@@ -106,11 +118,12 @@ public class Canteen_service {
 			//推广的
 		}
 		public boolean  CreateFoodType(FoodType_Bean foodType_Bean){
+			foodType_Bean.setFT_id(idFactory.createFoodTypeId());
 			return foodtype_dao.setFoodTypeName(foodType_Bean);
 			//创建菜品类别
 		}
 		public boolean CreateFood(Food food){
-			food.setF_id(f_id);//id工厂问题
+			food.setF_id(idFactory.createFoodId());//id工厂问题
 			return food_dao.setFood(food);
 			//创建菜品
 		}
@@ -123,7 +136,7 @@ public class Canteen_service {
 			//删除菜品
 		}
 		public boolean ChangeNorms(Norm_Bean norm_Bean){
-			norm_Bean.setN_id(n_id);//id工厂
+			norm_Bean.setN_id(idFactory.createNormId());//id工厂
 			return norms_dao.setNorm(norm_Bean);
 			//修改规格
 		}
@@ -139,10 +152,10 @@ public class Canteen_service {
 			return false;
 			//创建用餐计划
 		}
-		public boolean DeleteSetMeal(int S_id,int C_id){
-			return set_meal_dao.d;//Dao问题
-			//删除用餐计划
-		}
+//		public boolean DeleteSetMeal(int S_id,int C_id){
+//			return set_meal_dao.d;//Dao问题
+//			//删除用餐计划
+//		}
 		public boolean ChangeSetMeal(Set_meal_Bean set_meal_Bean){
 			return false;
 			//修改用餐计划
@@ -229,6 +242,7 @@ public class Canteen_service {
 				Set_meal_Bean data= dataSource.get(i);
 				set_meals.add(createSetMeal(data));
 				}
+			return set_meals;
 		}
 		
 		public Set_meal createSetMeal (Set_meal_Bean data) {
@@ -249,7 +263,7 @@ public class Canteen_service {
 			set_meal.setS_type(data.getS_type());
 			set_meal.setS_uptime(data.getS_uptime());
 			set_meal.setT_id(data.getT_id());
-			set_meal.setTeam(team_dao.get);//数据库修改
+			set_meal.setTeam(team_dao);//数据库修改
 			return set_meal;
 		} 
 }

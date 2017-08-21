@@ -48,6 +48,7 @@ import edu.csxy.order.service_domain.Order_Bean;
 import edu.csxy.order.service_domain.Set_meal_Bean;
 import edu.csxy.order.service_domain.Sign_Bean;
 import edu.csxy.order.service_domain.Team_Bean;
+import edu.csxy.order.utils.idFactory;
 
 
 public class Team_service {
@@ -97,14 +98,16 @@ public class Team_service {
 	}
 	
 	public boolean CreateOrder(Order newOrder,String T_id){
-		
+		newOrder.setO_id(idFactory.createOrderId());
 		order_dao.AddOrder(newOrder);
 		order_dao.insertTid(newOrder.getO_id(), T_id);
-		food_dao.//Dao问题
+		order//Dao问题
+		//数据库选择的规格存放
 		return false;
 		//创建订单
 	} 
 	public boolean PayOrder(){
+		
 		return false;
 		//支付订单
 	}
@@ -113,8 +116,10 @@ public class Team_service {
 		return false;
 		//管理单位信息
 	}
-	public boolean EstimateOrder(String T_id,int O_id,String C_id,String Estlimate){
-		order_dao.//数据库问题
+	public boolean EstimateOrder(Order order){
+		for (int i = 0;i<order.getFoods().size();i++) {
+			
+		}
 		return false;
 		//评价订单
 	}
@@ -166,12 +171,12 @@ public class Team_service {
 	
 	public List<Set_meal>getSet_Meal(String T_id,String state){
 		//判断状态
-		return createSet_meal(set_meal_dao.getTeamSet_meal(T_id, state));//Dao修改
+		return createSet_meal(set_meal_dao.getTeamSet_meal(T_id,0));
 		//根据状态查询用餐计划
 	}
 	
 	public List<Set_meal>getSet_Meal(String T_id,String startTime,String endTime){
-		return null;
+		return createSet_meal(set_meal_dao.);
 		//根据时间查询用餐计划
 	}
 	
@@ -276,6 +281,8 @@ public class Team_service {
 			Set_meal_Bean data= dataSource.get(i);
 			set_meals.add(createSetMeal(data));
 			}
+		
+		return set_meals;
 	}
 	
 	public Set_meal createSetMeal (Set_meal_Bean data) {

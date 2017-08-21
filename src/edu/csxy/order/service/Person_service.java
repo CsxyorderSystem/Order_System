@@ -45,6 +45,7 @@ import edu.csxy.order.service_domain.Order_Bean;
 import edu.csxy.order.service_domain.Person_Bean;
 import edu.csxy.order.service_domain.Set_meal_Bean;
 import edu.csxy.order.service_domain.Sign_Bean;
+import edu.csxy.order.utils.idFactory;
 
 public class Person_service {
 	
@@ -104,9 +105,11 @@ public class Person_service {
 		//修改个人信息
 	}
 	public Order_Bean CreateOrder(Order newOrder,String P_id){
+		newOrder.setO_id(idFactory.createOrderId());
 		order_dao.AddOrder(newOrder);
 		order_dao.insertPid(newOrder.getO_id(), P_id);
-		//插入菜品
+		food_dao.//Dao问题
+		//数据库选择的规格存放
 		return null;
 		//创建订单
 	}

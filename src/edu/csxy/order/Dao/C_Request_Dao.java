@@ -16,5 +16,5 @@ public interface C_Request_Dao {
 
 		//更改商家入驻申请单
 		public boolean changeRequestList(Canteen_Request_Bean canteen_Rquest_Bean);
-		
+		 // 根据状态查询商家入驻申请
 }

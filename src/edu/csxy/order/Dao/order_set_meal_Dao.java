@@ -11,6 +11,6 @@ public interface order_set_meal_Dao {
 		public boolean count(String O_id,String S_id,int count);
 		//查看该订单信息
 		public List<Order_set_meal> setOSMperson(String O_id,String T_id);
-		//插入单位用餐人数
+		//插入单位用餐人员
 		public boolean getOSMnumber(String O_id,String T_id,String OSM_person);
 }
