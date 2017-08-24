@@ -8,6 +8,7 @@ import edu.csxy.order.service_domain.Norm_Bean;
 public class Food extends Food_Bean{
 	private List<Norm_Bean> norms ;
 	private int count = 0;
+	private float Estimate = 0;
 	public List<Norm_Bean> getNorms() {
 		return norms;
 	}
@@ -28,5 +29,11 @@ public class Food extends Food_Bean{
 	public float getGatheringPrice(){//计算应付价格
 		return count;
 		}
+	public float getEstimate() {
+		return Estimate;
+	}
+	public void setEstimate(float estimate) {
+		Estimate = estimate;
+	}
 	
 }

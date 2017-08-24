@@ -6,6 +6,14 @@ public class Norm_Bean {
 	private String N_type;
 	private float N_price;
 	private String C_id;
+	private boolean selected = false;
+	
+	public boolean isSelected() {
+		return selected;
+	}
+	public void Selected() {
+		this.selected = !this.selected;
+	}
 	public String getC_id() {
 		return C_id;
 	}

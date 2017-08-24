@@ -19,7 +19,7 @@ public class C_Request_impl extends BaseDao<Canteen_Request_Bean> implements C_R
 	public boolean setRequest(Canteen_Request_Bean canteen_Rquest_Bean) {
 		// TODO Auto-generated method stub
 		String sql="insert into canteen_request values "+" (?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		return insert(sql, canteen_Rquest_Bean.getCR_id(),canteen_Rquest_Bean.getC_check(),canteen_Rquest_Bean.getC_sign_check(),canteen_Rquest_Bean.getC_lincense_checck(),canteen_Rquest_Bean.getC_gathering_check(),canteen_Rquest_Bean.getPermission_check(),canteen_Rquest_Bean.getC_time(),canteen_Rquest_Bean.getC_id(),canteen_Rquest_Bean.getC_id(),canteen_Rquest_Bean.getC_sign_id(),canteen_Rquest_Bean.getC_lincense_id(),canteen_Rquest_Bean.getC_gathering_id(),canteen_Rquest_Bean.getC_permission_id(),canteen_Rquest_Bean.getManager());
+		return insert(sql, canteen_Rquest_Bean.getCR_id(),canteen_Rquest_Bean.getC_check(),canteen_Rquest_Bean.getC_sign_check(),canteen_Rquest_Bean.getC_lincense_check(),canteen_Rquest_Bean.getC_gathering_check(),canteen_Rquest_Bean.getPermission_check(),canteen_Rquest_Bean.getC_time(),canteen_Rquest_Bean.getC_id(),canteen_Rquest_Bean.getC_id(),canteen_Rquest_Bean.getC_sign_id(),canteen_Rquest_Bean.getC_lincense_id(),canteen_Rquest_Bean.getC_gathering_id(),canteen_Rquest_Bean.getC_permission_id(),canteen_Rquest_Bean.getManager());
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class C_Request_impl extends BaseDao<Canteen_Request_Bean> implements C_R
 	//修改入驻申请 完成
 	public boolean changeRequestList(Canteen_Request_Bean canteen_Rquest_Bean) {
 		String sql="update canteen_Request set C_check=?,C_sign_check=?,C_lincense_check=?,C_gathering_id=?,C_permission_check=? where CR_id=?" ;
-		boolean b=update(sql, canteen_Rquest_Bean.getC_check(),canteen_Rquest_Bean.getC_sign_check(),canteen_Rquest_Bean.getC_lincense_checck(),canteen_Rquest_Bean.getC_gathering_check(),canteen_Rquest_Bean.getPermission_check(),canteen_Rquest_Bean.getCR_id());
+		boolean b=update(sql, canteen_Rquest_Bean.getC_check(),canteen_Rquest_Bean.getC_sign_check(),canteen_Rquest_Bean.getC_lincense_check(),canteen_Rquest_Bean.getC_gathering_check(),canteen_Rquest_Bean.getPermission_check(),canteen_Rquest_Bean.getCR_id());
 		return b;
 		// TODO Auto-generated method stub
 		

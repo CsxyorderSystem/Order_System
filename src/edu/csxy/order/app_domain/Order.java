@@ -8,7 +8,6 @@ import edu.csxy.order.service_domain.Team_Bean;
 public class Order extends Order_Bean{
 	private List<Food> foods;
 	private String user_id;
-//	private int Canteen;
 	public List<Food> getFoods() {
 		return foods;
 	}

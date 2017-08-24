@@ -26,5 +26,6 @@ public interface food_Dao {
 	//根据订单号查询所有得菜品
 	public List<Food_Bean> queryfood(String O_id);
 	
-
+	//将菜品插入到订单中
+	
 }

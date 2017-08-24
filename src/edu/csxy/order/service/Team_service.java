@@ -100,9 +100,10 @@ public class Team_service {
 	public boolean CreateOrder(Order newOrder,String T_id){
 		newOrder.setO_id(idFactory.createOrderId());
 		order_dao.AddOrder(newOrder);
+		for(int i= 0;i<newOrder.getFoods().size();i++) {
+			food//将菜品插入订单，添加用户选择的规格
+		}
 		order_dao.insertTid(newOrder.getO_id(), T_id);
-		order//Dao问题
-		//数据库选择的规格存放
 		return false;
 		//创建订单
 	} 
@@ -117,9 +118,11 @@ public class Team_service {
 		//管理单位信息
 	}
 	public boolean EstimateOrder(Order order){
+		
+		//评价订单内容
 		for (int i = 0;i<order.getFoods().size();i++) {
 			
-		}
+		}//评价菜品内容
 		return false;
 		//评价订单
 	}
