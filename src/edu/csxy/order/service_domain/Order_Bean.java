@@ -6,7 +6,7 @@ public class Order_Bean {
 	private String O_price;
 	private String O_purchase;
 	private String O_estimate;
-	private String O_state;
+	private int O_state;
 	private String O_usetime;
 	private String O_reason;
 	private String C_id;
@@ -53,10 +53,11 @@ public class Order_Bean {
 	public void setO_estimate(String o_estimate) {
 		O_estimate = o_estimate;
 	}
-	public String getO_state() {
+
+	public int getO_state() {
 		return O_state;
 	}
-	public void setO_state(String o_state) {
+	public void setO_state(int o_state) {
 		O_state = o_state;
 	}
 	public String getO_usetime() {

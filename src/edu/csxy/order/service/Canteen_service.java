@@ -83,8 +83,8 @@ public class Canteen_service {
 			return createOrderList(Beans);//根据状态查询自己接的单
 		}
 		
-		public boolean ComfirmOrder(int O_id,String O_state){
-			return order_dao.;//Dao问题
+		public boolean ComfirmOrder(String O_id,int O_state){
+			return order_dao.processOrder(O_state, O_id);//确认订单
 			//确认订单
 		}
 		public boolean OpenAndClose(boolean open){
@@ -266,4 +266,5 @@ public class Canteen_service {
 			set_meal.setTeam(team_dao);//数据库修改
 			return set_meal;
 		} 
+		
 }

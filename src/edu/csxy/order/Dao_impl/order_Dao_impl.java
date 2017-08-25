@@ -117,5 +117,26 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 		String sql="insert into team_order_canteen values "+" (?,?)";
 		return insert(sql, O_id,P_id);
 	}
+	
+	//添加订单和食物的关系
+	@Override
+	public boolean addFoodIntoOrder(String O_id, String F_id,int count) {
+		String sql = "insert into order_food(O_id,F_id,,count) "+"(?,?,?)";
+		return 	insert(sql, O_id,F_id,count);
+	}
+	
+	//评价订单
+	@Override
+	public boolean estimateOrder(String estimate, String O_id) {
+		String sql="update `order` set O_estimate=? where O_id=?";
+		return update(sql, estimate,O_id);
+	}
+	
+	//处理订单
+	@Override
+	public boolean processOrder(int state, String O_id) {
+		String sql="update `order` set O_state=? where O_id=?";
+		return update(sql,state,O_id);
+	}
 
 }

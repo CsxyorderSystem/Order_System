@@ -98,18 +98,19 @@ public class Team_service {
 	}
 	
 	public boolean CreateOrder(Order newOrder,String T_id){
+		boolean falg = true;
 		newOrder.setO_id(idFactory.createOrderId());
-		order_dao.AddOrder(newOrder);
+		falg = falg&&order_dao.AddOrder(newOrder);
 		for(int i= 0;i<newOrder.getFoods().size();i++) {
-			food//将菜品插入订单，添加用户选择的规格
+			Food data = newOrder.getFoods().get(i);
+			falg = falg&&order_dao.addFoodIntoOrder(newOrder.getO_id(), data.getF_id(), data.getCount());//将菜品插入订单，添加用户选择的规格
 		}
-		order_dao.insertTid(newOrder.getO_id(), T_id);
-		return false;
+		falg = falg&&order_dao.insertTid(newOrder.getO_id(), T_id);
+		return falg;
 		//创建订单
 	} 
 	public boolean PayOrder(){
-		
-		return false;
+		return ;
 		//支付订单
 	}
 	public boolean ManagerInfo(Team_Bean team_Bean){
@@ -309,4 +310,14 @@ public class Team_service {
 		set_meal.setTeam(team_dao.get);//数据库修改
 		return set_meal;
 	} 
+	
+	//转换数据库存放的订单状态和前端显示的订单状态
+	public int getOrderState(String state){
+		
+		return 0;
+		}
+	public String getOrderState(int state){
+		
+		return "";
+		}
 }

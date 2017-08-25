@@ -50,8 +50,9 @@ public interface order_Dao {
 	public boolean insertPid(String O_id,String P_id);
 	
 	//将菜品与订单关联
-	
+	public boolean addFoodIntoOrder(String O_id,String F_id,int count);
 	//评价订单
-	
-	//确认订单
+	public boolean estimateOrder(String estimate,String O_id);
+	//处理订单订单
+	public boolean processOrder(int state,String O_id );
 }
