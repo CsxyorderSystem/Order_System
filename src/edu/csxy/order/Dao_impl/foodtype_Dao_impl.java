@@ -9,7 +9,6 @@ public class foodtype_Dao_impl extends BaseDao<FoodType_Bean> implements foodtyp
 	//获取名字
 	@Override
 	public String getFoodTypeName(String FT_id) {
-		// TODO Auto-generated method stub
 		String sql="select FT_name from food_type where FT_id=?";
 		FoodType_Bean f=query(sql, FT_id);
 		if(f==null){
@@ -21,16 +20,24 @@ public class foodtype_Dao_impl extends BaseDao<FoodType_Bean> implements foodtyp
 	//设置菜品名字
 	@Override
 	public boolean setFoodTypeName(FoodType_Bean foodType_Bean) {
-		// TODO Auto-generated method stub
 		String sql="insert into food_type values"+" FT_id=? ,FT_name=?,C_id=? ";
 		boolean f=insert(sql, foodType_Bean.getFT_id(), foodType_Bean.getFT_name(), foodType_Bean.getC_id());
 		return f;
 	}
 	@Override
 	public List<FoodType_Bean> getfoodtype(String C_id) {
-		// TODO Auto-generated method stub
 		String sql="select * from food_type where C_id=?";
 		return queryforList(sql, C_id);
+	}
+	@Override
+	public boolean deleteFoodType(String FT_id) {
+		String sql = "delete from food_type where FT_id = ?";
+		return delete(sql, FT_id);
+	}
+	@Override
+	public boolean changeFoodType(FoodType_Bean foodType_Bean) {
+		String sql="update food_type set FT_name=?  where FT_id=?";
+		return update(sql, foodType_Bean.getFT_name(),foodType_Bean.getFT_id());
 	}
 
 	

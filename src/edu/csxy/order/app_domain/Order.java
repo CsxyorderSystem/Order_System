@@ -6,8 +6,19 @@ import edu.csxy.order.service_domain.Order_Bean;
 import edu.csxy.order.service_domain.Team_Bean;
 
 public class Order extends Order_Bean{
+	
+	public static final  int pay_state = -1;
+	public static final  int payed_state = 0;
+	public static final  int confirn_state = 1;
+	public static final  int use_state = 2;
+	public static final  int finish_state = 3;
+	public static final  int unconfirn_state = -2;
+	
+	
 	private List<Food> foods;
+	
 	private String user_id;
+	
 	public List<Food> getFoods() {
 		return foods;
 	}

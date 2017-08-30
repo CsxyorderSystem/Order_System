@@ -3,6 +3,8 @@ package edu.csxy.order.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+
 import edu.csxy.order.Dao.C_Request_Dao;
 import edu.csxy.order.Dao.address_Dao;
 import edu.csxy.order.Dao.business_Dao;
@@ -65,6 +67,7 @@ public class Team_service {
 	set_meal_Dao set_meal_dao = new set_meal_Dao_impl();
 	foodtype_Dao foodtype_dao=new foodtype_Dao_impl();
 	order_set_meal_Dao order_set_meal_dao =new order_set_meal_Dao_impl();
+	Gson gson = new Gson();
 	
 	public List<Canteen> QueryAllCanteen(){
 		List<Canteen_Bean> canteen_beans = canteen_dao.getCanteen();
@@ -103,14 +106,14 @@ public class Team_service {
 		falg = falg&&order_dao.AddOrder(newOrder);
 		for(int i= 0;i<newOrder.getFoods().size();i++) {
 			Food data = newOrder.getFoods().get(i);
-			falg = falg&&order_dao.addFoodIntoOrder(newOrder.getO_id(), data.getF_id(), data.getCount());//将菜品插入订单，添加用户选择的规格
+			falg = falg&&order_dao.addFoodIntoOrder(newOrder.getO_id(), data.getF_id(), data.getCount(),gson.toJson(data.getNorms()));//将菜品插入订单，添加用户选择的规格
 		}
 		falg = falg&&order_dao.insertTid(newOrder.getO_id(), T_id);
 		return falg;
 		//创建订单
 	} 
-	public boolean PayOrder(){
-		return ;
+	public boolean PayOrder(String O_id ){
+		return order_dao.processOrder(Order.payed_state, O_id) ;
 		//支付订单
 	}
 	public boolean ManagerInfo(Team_Bean team_Bean){

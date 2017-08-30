@@ -31,10 +31,15 @@ public class canteen_Dao_impl extends BaseDao<Canteen_Bean> implements canteen_D
 	//≤È—Ø”‡∂Ó
 	@Override
 	public Float getBalance(String C_id) {
-		// TODO Auto-generated method stub
 		String sql="select C_balance from canteen where C_id=?";
 		Canteen_Bean canteen_Bean= query(sql, C_id);
 		return canteen_Bean.getC_balance();
+	}
+	
+	@Override
+	public boolean changeCanteenState(String C_id, String C_open) {
+		String sql="update canteen set  C_open=? where C_id=?";
+		return update(sql, C_open,C_id);
 	}
 	
 

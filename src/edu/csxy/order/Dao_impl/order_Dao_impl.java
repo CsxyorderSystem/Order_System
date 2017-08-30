@@ -120,8 +120,8 @@ public class order_Dao_impl extends BaseDao<Order_Bean> implements order_Dao {
 	
 	//添加订单和食物的关系
 	@Override
-	public boolean addFoodIntoOrder(String O_id, String F_id,int count) {
-		String sql = "insert into order_food(O_id,F_id,,count) "+"(?,?,?)";
+	public boolean addFoodIntoOrder(String O_id, String F_id,int count,String norms) {
+		String sql = "insert into order_food(O_id,F_id,,count,norms) "+"(?,?,?,?)";
 		return 	insert(sql, O_id,F_id,count);
 	}
 	

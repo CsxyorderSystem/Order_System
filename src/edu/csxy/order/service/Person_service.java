@@ -3,6 +3,8 @@ package edu.csxy.order.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+
 import edu.csxy.order.Dao.address_Dao;
 import edu.csxy.order.Dao.business_Dao;
 import edu.csxy.order.Dao.canteen_Dao;
@@ -62,6 +64,7 @@ public class Person_service {
 	set_meal_Dao set_meal_dao = new set_meal_Dao_impl();
 	foodtype_Dao foodtype_dao=new foodtype_Dao_impl();
 	order_set_meal_Dao order_set_meal_dao =new order_set_meal_Dao_impl();
+	Gson gson = new Gson();
 	
 	
 	public List<Order> QueryOrder(String P_id){
@@ -104,18 +107,22 @@ public class Person_service {
 		return person_dao.changePersonInfo(person_Bean);
 		//修改个人信息
 	}
-	public Order_Bean CreateOrder(Order newOrder,String P_id){
+	
+	public boolean CreateOrder(Order newOrder,String P_id){
+		boolean falg = true;
 		newOrder.setO_id(idFactory.createOrderId());
-		order_dao.AddOrder(newOrder);
-		order_dao.insertPid(newOrder.getO_id(), P_id);
-		food_dao.//Dao问题
-		//数据库选择的规格存放
-		return null;
+		falg = falg&&order_dao.AddOrder(newOrder);
+		for(int i= 0;i<newOrder.getFoods().size();i++) {
+			Food data = newOrder.getFoods().get(i);
+			falg = falg&&order_dao.addFoodIntoOrder(newOrder.getO_id(), data.getF_id(), data.getCount(),gson.toJson(data.getNorms()));//将菜品插入订单，添加用户选择的规格
+		}
+		falg = falg&&order_dao.insertTid(newOrder.getO_id(), P_id);
+		return falg;
 		//创建订单
-	}
-	public void EstlimateOrder(String P_id,String C_id,String Estlimate){
-		//Dao问题
-		//评价订单
+	} 
+	public boolean PayOrder(String O_id ){
+		return order_dao.processOrder(Order.payed_state, O_id) ;
+		//支付订单
 	}
 	
 	public List<Food> CheckFood(String C_id){

@@ -1,12 +1,13 @@
 package edu.csxy.order.service_domain;
 
+
 public class Order_Bean {
 	private String O_id;
 	private String O_time;
 	private String O_price;
 	private String O_purchase;
 	private String O_estimate;
-	private int O_state;
+	private int O_state = -1;
 	private String O_usetime;
 	private String O_reason;
 	private String C_id;

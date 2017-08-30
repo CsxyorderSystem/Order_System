@@ -15,4 +15,7 @@ public interface canteen_Dao {
 	//加钱到余额，先不做
 	//查余额
 	public Float getBalance(String C_id);
+	
+	//开（关）店铺
+	public boolean changeCanteenState(String C_id,String C_open) ;
 }

@@ -9,6 +9,8 @@ public interface foodtype_Dao {
 	public boolean setFoodTypeName(FoodType_Bean foodType_Bean);//设置菜品名字
 	public List<FoodType_Bean> getfoodtype(String C_id);//根据商家获取list
 	//删除类别
-	//修改类别
+	public boolean deleteFoodType(String FT_id);
 	
+	//修改类别
+	public boolean changeFoodType(FoodType_Bean foodType_Bean);
 }

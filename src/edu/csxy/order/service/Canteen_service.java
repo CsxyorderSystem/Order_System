@@ -87,9 +87,8 @@ public class Canteen_service {
 			return order_dao.processOrder(O_state, O_id);//确认订单
 			//确认订单
 		}
-		public boolean OpenAndClose(boolean open){
-			canteen_dao.//Dao问题
-			return false;
+		public boolean OpenAndClose(String C_open,String C_id){
+			return canteen_dao.changeCanteenState(C_id, C_open);
 			//开店关店
 		}
 		public List<Food> CheckFood(String C_id){
@@ -127,8 +126,8 @@ public class Canteen_service {
 			return food_dao.setFood(food);
 			//创建菜品
 		}
-		public boolean DeleteFoodType(String FT_name,int C_id){
-			return foodtype_dao.;//Dao问题
+		public boolean DeleteFoodType(String FT_id){
+			return foodtype_dao.deleteFoodType(FT_id);
 			//删除菜品类别
 		}
 		public boolean DeleteFood(String F_id){
@@ -145,7 +144,7 @@ public class Canteen_service {
 			//修改菜品
 		}
 		public boolean  ChangeFoodType(FoodType_Bean food_type_Bean){
-			return foodtype_dao.;//Dao问题
+			return foodtype_dao.changeFoodType(food_type_Bean);//Dao问题
 			//修改菜品类别
 		}
 		public boolean CreateSetMeal( Set_meal_Bean set_meal_Bean){
