@@ -11,7 +11,8 @@ import edu.csxy.order.service_domain.Norm_Bean;
 import edu.csxy.order.service_domain.Permission_Bean;
 import edu.csxy.order.service_domain.Sign_Bean;
 
-public class Canteen extends Canteen_Bean{
+public class Canteen {
+	private Canteen_Bean canteen_info;
 	private Address_Bean address;
 	private Lincense_Bean lincese;
 	private Sign_Bean sign;
@@ -85,6 +86,14 @@ public class Canteen extends Canteen_Bean{
 		this.orders = orders;
 	}
 	
+	
+	
+	public Canteen_Bean getCanteen_info() {
+		return canteen_info;
+	}
+	public void setCanteen_info(Canteen_Bean canteen_info) {
+		this.canteen_info = canteen_info;
+	}
 	public float getTumover(){//统计营业额
 		return 0;
 		

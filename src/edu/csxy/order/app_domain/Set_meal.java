@@ -5,7 +5,9 @@ import java.util.List;
 import edu.csxy.order.service_domain.Set_meal_Bean;
 import edu.csxy.order.service_domain.Team_Bean;
 
-public class Set_meal extends Set_meal_Bean{
+public class Set_meal {
+	
+	private Set_meal_Bean set_meal_info;
 	private List<Order> orders;
 	private Team_Bean team;
 	private String[] OSM_person;
@@ -36,6 +38,13 @@ public class Set_meal extends Set_meal_Bean{
 	public void setOSM_number(int oSM_number) {
 		OSM_number = oSM_number;
 	}
+	public Set_meal_Bean getSet_meal_info() {
+		return set_meal_info;
+	}
+	public void setSet_meal_info(Set_meal_Bean set_meal_info) {
+		this.set_meal_info = set_meal_info;
+	}
+	
 	
 	
 }

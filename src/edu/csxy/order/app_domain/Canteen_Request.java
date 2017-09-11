@@ -7,7 +7,8 @@ import edu.csxy.order.service_domain.Lincense_Bean;
 import edu.csxy.order.service_domain.Permission_Bean;
 import edu.csxy.order.service_domain.Sign_Bean;
 
-public class Canteen_Request extends Canteen_Request_Bean{
+public class Canteen_Request {
+	private Canteen_Request_Bean request_info;
 	private Lincense_Bean lincense;
 	private Sign_Bean sign;
 	private Gathering_Bean gathering;
@@ -43,7 +44,14 @@ public class Canteen_Request extends Canteen_Request_Bean{
 	public void setCanteen(Canteen_Bean canteen) {
 		this.canteen = canteen;
 	}
-
+	public Canteen_Request_Bean getRequest_info() {
+		return request_info;
+	}
+	public void setRequest_info(Canteen_Request_Bean request_info) {
+		this.request_info = request_info;
+	}
+	
+	
 	
 	
 

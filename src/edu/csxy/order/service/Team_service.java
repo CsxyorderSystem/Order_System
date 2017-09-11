@@ -102,13 +102,13 @@ public class Team_service {
 	
 	public boolean CreateOrder(Order newOrder,String T_id){
 		boolean falg = true;
-		newOrder.setO_id(idFactory.createOrderId());
-		falg = falg&&order_dao.AddOrder(newOrder);
+		newOrder.getOrder_info().setO_id(idFactory.createOrderId());
+		falg = falg&&order_dao.AddOrder(newOrder.getOrder_info());
 		for(int i= 0;i<newOrder.getFoods().size();i++) {
 			Food data = newOrder.getFoods().get(i);
-			falg = falg&&order_dao.addFoodIntoOrder(newOrder.getO_id(), data.getF_id(), data.getCount(),gson.toJson(data.getNorms()));//将菜品插入订单，添加用户选择的规格
+			falg = falg&&order_dao.addFoodIntoOrder(newOrder.getOrder_info().getO_id(), data.getFood_info().getF_id(), data.getCount(),gson.toJson(data.getNorms()));//将菜品插入订单，添加用户选择的规格
 		}
-		falg = falg&&order_dao.insertTid(newOrder.getO_id(), T_id);
+		falg = falg&&order_dao.insertTid(newOrder.getOrder_info().getO_id(), T_id);
 		return falg;
 		//创建订单
 	} 
@@ -152,7 +152,7 @@ public class Team_service {
 		//查看收款人信息
 	}
 	public boolean CreateSetMeal( Set_meal set_meal,String T_id){
-		set_meal_dao.setSet_meal(set_meal);
+		set_meal_dao.setSet_meal(set_meal.getSet_meal_info());
 		for(int i = 0; i<set_meal.getOrders().size();i++) {
 			CreateOrder(set_meal.getOrders().get(i),T_id);
 		}
@@ -198,40 +198,28 @@ public class Team_service {
 	
 	public Canteen createCanteen(Canteen_Bean data) {
 		Canteen canteen = new Canteen();
-		canteen.setC_id(data.getC_id());
-		canteen.setC_name(data.getC_name());
-		canteen.setA_id(data.getA_id());
-		canteen.setAddress(address_dao.getAddress(canteen.getA_id()));
-		canteen.setC_balance(data.getC_balance());
-		canteen.setC_contacts(data.getC_contacts());
-		canteen.setC_environment(data.getC_environment());
-		canteen.setC_estimate(data.getC_estimate());
-		canteen.setC_logo(data.getC_logo());
-		canteen.setC_open(data.getC_open());
-		canteen.setC_phone(data.getC_phone());
-		canteen.setC_scope(data.getC_scope());
-		canteen.setC_surface(data.getC_surface());
-		canteen.setC_type(data.getC_type());
-		canteen.setFood_types(foodtype_dao.getfoodtype(canteen.getC_id()));
+		canteen.setCanteen_info(data);
 
-		canteen.setGathering(gathering_Dao.getGatherInfo(canteen.getC_id()));
-		canteen.setLincese(lincense_dao.getLincenseInfo(canteen.getC_id()));
-		canteen.setNorms(norms_dao.getAllNorms(canteen.getC_id()));
-		canteen.setPermission(permission_dao.getPermissionInfo(canteen.getC_id()));
-		canteen.setSign(sign_dao.getSignInfo(canteen.getC_id()));
+		canteen.setAddress(address_dao.getAddress(data.getA_id()));
+		canteen.setFood_types(foodtype_dao.getfoodtype(data.getC_id()));
+
+		canteen.setGathering(gathering_Dao.getGatherInfo(data.getC_id()));
+		canteen.setLincese(lincense_dao.getLincenseInfo(data.getC_id()));
+		canteen.setNorms(norms_dao.getAllNorms(data.getC_id()));
+		canteen.setPermission(permission_dao.getPermissionInfo(data.getC_id()));
+		canteen.setSign(sign_dao.getSignInfo(data.getC_id()));
 		
 		
-		List<Food_Bean> food_Beans = food_dao.getAllFood(canteen.getC_id());
+		List<Food_Bean> food_Beans = food_dao.getAllFood(data.getC_id());
 		canteen.setFoods(createFoodList(food_Beans));//需要获取食物列表
 		
-		List<Order_Bean> order_Beans = order_dao.getCanteenOrderInfo(canteen.getC_id());
+		List<Order_Bean> order_Beans = order_dao.getCanteenOrderInfo(data.getC_id());
 		canteen.setOrders(createOrderList(order_Beans));//需要先完成创建订单列表的方法
 		
-		List<Set_meal_Bean> set_meal_Beans =set_meal_dao.getCanteenSet_meal(canteen.getC_id());
+		List<Set_meal_Bean> set_meal_Beans =set_meal_dao.getCanteenSet_meal(data.getC_id());
 		canteen.setSet_meals(createSet_meal(set_meal_Beans));//需要先完成套餐创建的方法
 		return canteen;
 	}
-	
 	public List<Food> createFoodList(List<Food_Bean> dataScoure ){
 		List <Food> Foods = new ArrayList<Food>();
 		for(int i= 0; i<dataScoure.size();i++) {
@@ -243,17 +231,9 @@ public class Team_service {
 	
 	public Food createFood(Food_Bean data) {
 		Food food=new Food();
-		food.setF_describe(data.getF_describe());
-		food.setF_discount(data.getF_discount());
-		food.setF_estimate(data.getF_estimate());
-		food.setF_id(data.getF_id());
-		food.setF_image(data.getF_image());
-		food.setF_name(data.getF_name());
-		food.setF_number(data.getF_number());
-		food.setF_price(data.getF_price());
-		food.setF_type(foodtype_dao.getFoodTypeName(data.getF_type()));//数据库需要修改
-		food.setF_uptime(data.getF_uptime());
-		food.setNorms(norms_dao.queryList(food.getF_id()));//数据库修改
+		food.setFood_info(data);
+		food.setF_type_name(foodtype_dao.getFoodTypeName(data.getF_type()));//数据库需要修改
+		food.setNorms(norms_dao.queryList(data.getF_id()));//数据库修改
 		return food;
 	}
 	
@@ -268,20 +248,11 @@ public class Team_service {
 	
 	public Order createOrder (Order_Bean data) {
 		Order order = new Order();
-		order.setC_id(data.getC_id());
+		order.setOrder_info(data);
 		List<Food_Bean> food_Beans = food_dao.queryfood(data.getO_id());
 		order.setFoods(createFoodList(food_Beans));//创建订单内的菜品列表
-		order.setO_estimate(data.getO_estimate());
-		order.setO_id(data.getO_id());
-		order.setO_price(data.getO_price());
-		order.setO_purchase(data.getO_purchase());
-		order.setO_reason(data.getO_reason());
-		order.setO_state(data.getO_state());
-		order.setO_time(data.getO_id());
-		order.setO_usetime(data.getO_usetime());
 		return order;
 	}
-	
 	public List<Set_meal> createSet_meal(List<Set_meal_Bean> dataSource){
 		List<Set_meal> set_meals = new ArrayList<Set_meal>();
 		for(int i = 0;i<dataSource.size();i++) {
@@ -294,23 +265,10 @@ public class Team_service {
 	
 	public Set_meal createSetMeal (Set_meal_Bean data) {
 		Set_meal set_meal = new Set_meal();
-		set_meal.setC_id(data.getC_id());
+		set_meal.setSet_meal_info(data);
 		List<Order_Bean> order_Beans = order_dao.getSetMealOrderInfo(data.getS_id());
 		set_meal.setOrders(createOrderList(order_Beans));
-		set_meal.setOSM_number(order_set_meal_dao.getOSMnumber(O_id, T_id, OSM_person));//数据库修改
-		set_meal.setOSM_person(oSM_person);//数据库修改
-		set_meal.setS_describe(data.getS_describe());
-		set_meal.setS_endtime(data.getS_endtime());
-		set_meal.setS_id(data.getS_id());
-		set_meal.setS_name(data.getS_name());
-		set_meal.setS_numCer(data.getS_numCer());
-		set_meal.setS_price(data.getS_price());
-		set_meal.setS_starttime(data.getS_starttime());
-		set_meal.setS_state(data.getS_state());
-		set_meal.setS_type(data.getS_type());
-		set_meal.setS_uptime(data.getS_uptime());
-		set_meal.setT_id(data.getT_id());
-		set_meal.setTeam(team_dao.get);//数据库修改
+		set_meal.setOSM_number(order_set_meal_dao.getOSMnumber(O_id, T_id, OSM_person));//数据库修改//数据库修改
 		return set_meal;
 	} 
 	

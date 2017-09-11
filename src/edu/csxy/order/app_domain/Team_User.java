@@ -6,6 +6,7 @@ import edu.csxy.order.service_domain.User_Bean;
 
 public class Team_User extends Team_Bean{
 
+	private Team_Bean team_info;
 	private User_Bean user;
 	private Address_Bean address;
 
@@ -23,6 +24,14 @@ public class Team_User extends Team_Bean{
 
 	public void setAddress(Address_Bean address) {
 		this.address = address;
+	}
+
+	public Team_Bean getTeam_info() {
+		return team_info;
+	}
+
+	public void setTeam_info(Team_Bean team_info) {
+		this.team_info = team_info;
 	}
 	
 	

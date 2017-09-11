@@ -67,24 +67,12 @@ public class Manager_service {
 	
 	public Canteen_Request createC_Request(Canteen_Request_Bean data){
 		Canteen_Request request = new Canteen_Request();
-		request.setB_id(data.getB_id());
-		request.setC_id(data.getC_id());
-		request.setC_check(data.getC_check());//×ª»»
-		request.setC_gathering_check(data.getC_gathering_check());//×ª»»
-		request.setC_gathering_id(data.getC_gathering_id());
-		request.setC_lincense_checck(data.getC_lincense_checck());
-		request.setC_permission_id(data.getC_permission_id());
-		request.setCR_id(data.getCR_id());
-		request.setC_sign_check(data.getC_sign_check());
-		request.setC_sign_id(data.getC_sign_id());
-		request.setC_sign_check(data.getC_sign_check());
-		request.setC_time(data.getC_time());
-		request.setCanteen(canteen_dao.getCanteenInfo(request.getC_id()));
-		request.setGathering(gathering_Dao.getGatherInfo(request.getC_id()));
-		request.setLincense(lincense_dao.getLincenseInfo(request.getC_id()));
-		request.setManager(M_id);
-		request.setPermission(permission_dao.getPermissionInfo(request.getC_id()));
-		request.setSign(sign_dao.getSignInfo(request.getC_id()));
+		request.setCanteen(canteen_dao.getCanteenInfo(request.getRequest_info().getC_id()));
+		request.setGathering(gathering_Dao.getGatherInfo(request.getRequest_info().getC_id()));
+		request.setLincense(lincense_dao.getLincenseInfo(request.getRequest_info().getC_id()));
+		request.getRequest_info().setManager(M_id);
+		request.setPermission(permission_dao.getPermissionInfo(request.getRequest_info().getC_id()));
+		request.setSign(sign_dao.getSignInfo(request.getRequest_info().getC_id()));
 		
 		return request;
 	}
